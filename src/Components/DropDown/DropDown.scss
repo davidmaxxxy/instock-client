@@ -1,0 +1,48 @@
+@use "../../../styles/partials/variables.scss" as variables;
+@use "../../../styles/partials/mixin.scss" as mixin;
+
+
+
+.select__container {
+  position: relative; /* For positioning custom icon */
+  width: 100%;
+  margin: 0 0.5rem; /* Margin for spacing around the container */
+
+  select {
+    
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem; /* Padding adjusted to leave space for custom icon */
+    border-radius: 20px;
+    width: 100%;
+    border: 0.1rem solid variables.$secondary-color-cloud;
+    font-size: 1rem;
+
+    &:focus,
+    &:active {
+      border: 0.1rem solid variables.$primary-color-indigo;
+    }
+
+    &.isError {
+      border: 0.1rem solid variables.$supporting-color-red;
+    }
+
+    &::placeholder {
+      color: variables.$secondary-color-slate;
+      font-size: 1rem; /* Adjust font-size as needed */
+    }
+
+    /* Hide default arrow and apply a custom background image if needed */
+    background-size: 1rem;
+  }
+}
+
+.error_text-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+
+  &__text {
+    color: variables.$supporting-color-red;
+    font-size: medium;
+  }
+}

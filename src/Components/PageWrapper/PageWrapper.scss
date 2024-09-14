@@ -1,0 +1,32 @@
+@use "../../../styles/partials/variables.scss" as variables;
+@use "../../../styles/partials/mixin.scss" as mixin;
+
+.wrapper__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &__section--container {
+      border-radius: 0.2rem;
+    background-color: variables.$primary-color-white;
+  }
+
+  &__header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid variables.$secondary-color-slate;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    @include mixin.tablet {
+      flex-direction: row;
+    }
+  }
+  &__header--title-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+}
