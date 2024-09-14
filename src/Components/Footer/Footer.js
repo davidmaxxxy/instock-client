@@ -4,10 +4,12 @@ import logo from "../../asset/copyright-logo.png";
 
 const Footer = () => {
   return (
+    <footer>
     <div className="footer">
       <img className="logo" src={logo} />
       <h4>InStock Inc. All Rights Reserved.</h4>
     </div>
+    </footer>
   );
 };
 
