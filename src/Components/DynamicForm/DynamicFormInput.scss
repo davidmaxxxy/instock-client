@@ -1,0 +1,29 @@
+@use "../../styles/partials/variables.scss" as vars;
+@use "../../styles/partials/mixin.scss" as mixin;
+
+.dynamic-form {
+  &__group {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    @include mixin.fontSmall;
+    margin-bottom: 5px;
+    display: block;
+    color: vars.$primary-color-black; // Prefixed with the 'vars' namespace
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid vars.$secondary-color-cloud; // Ensure the variable is defined in variables.scss
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: vars.$primary-color-indigo; // Prefixed with the 'vars' namespace
+      outline: none;
+    }
+  }
+}

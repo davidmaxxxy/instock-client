@@ -1,0 +1,39 @@
+@import "../../styles/partials/mixins.scss";
+
+.dynamic-form {
+  // Container for the entire form
+  &__container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $light-gray;
+    padding: 20px;
+    gap: 20px;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  // Individual form section
+  &__section {
+    flex: 1;
+    padding: 20px;
+
+    &-title {
+      @include fontMedium;
+      margin-bottom: 15px;
+    }
+  }
+
+  // Button container
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+}
