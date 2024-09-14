@@ -1,4 +1,5 @@
 import "./App.css";
+import "./styles/global.scss";
 import { BrowserRouter as Router } from "react-router-dom";
 import AppNavigations from "./AppNavigations/AppNavigations";
 import Header from "./Components/Header/Header";
