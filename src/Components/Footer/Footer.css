@@ -114,6 +114,16 @@ p {
   color: #5C667E;
   padding: 2.4rem 1.6rem 2.4rem 1.6rem;
 }
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 3.6rem 2.4rem 3.6rem 2.4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 4.8rem 3.6rem 4.8rem 3.6rem;
+  }
+}
 
 .logo {
   width: 1.2rem;
