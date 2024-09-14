@@ -108,15 +108,86 @@ p {
   }
 }
 
-.footer {
+.header {
+  background-color: #232940;
   display: flex;
   justify-content: center;
-  color: #5C667E;
-  padding: 2.4rem 1.6rem 2.4rem 1.6rem;
 }
 
-.logo {
-  width: 1.2rem;
-  height: 1.2rem;
-  margin-right: 0.3rem;
-}/*# sourceMappingURL=Footer.css.map */
+.header-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .header-nav {
+    flex-direction: row;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header-nav {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    max-width: 102rem;
+    width: 100%;
+  }
+}
+
+.header-logo__img {
+  padding-top: 2.4rem;
+  width: 12.85rem;
+  height: 2.8rem;
+}
+@media screen and (min-width: 768px) {
+  .header-logo__img {
+    padding-top: 0;
+    padding-left: 3.2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header-logo__img {
+    padding-left: 0;
+  }
+}
+
+.header-side-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+.header-side-nav__warehouses-btn {
+  padding-left: 1.6rem;
+  width: 50%;
+  padding-right: 0.8rem;
+}
+.header-side-nav__inventory-btn {
+  padding-right: 1.6rem;
+  width: 50%;
+  padding-left: 0.8rem;
+}
+@media screen and (min-width: 768px) {
+  .header-side-nav {
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: right;
+  }
+  .header-side-nav__warehouses-btn {
+    padding-left: 2.4rem;
+    width: 10.7rem;
+    padding-right: 1.2rem;
+  }
+  .header-side-nav__inventory-btn {
+    padding-right: 3.2rem;
+    width: 10.7rem;
+    padding-left: 1.2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header-side-nav__inventory-btn {
+    padding-right: 0;
+  }
+}/*# sourceMappingURL=Header.css.map */
