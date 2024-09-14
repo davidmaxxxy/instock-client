@@ -93,7 +93,7 @@ html {
     }
   }
 
-  p1 {
+  p {
     font-size: 1.5rem;
     line-height: 2.6rem;
     font-weight: 400;
@@ -105,26 +105,3 @@ html {
     }
   }
   
-  p2 {
-    font-size: 1.3rem;
-    line-height: 2rem;
-    font-weight: 400;
-  
-    @include tablet {
-      font-size: 1.4rem;
-      line-height: 2.2rem;
-      font-weight: 400;
-    }
-  }
-  
-  p3 {
-    font-size: 1.1rem;
-    line-height: 1.6rem;
-    font-weight: 400;
-  
-    @include tablet {
-      font-size: 1.2rem;
-      line-height: 1.8rem;
-      font-weight: 400;
-    }
-  }
