@@ -110,19 +110,8 @@ p {
 
 .footer {
   display: flex;
-  z-index: 10;
   justify-content: center;
   color: #5C667E;
-}
-@media screen and (min-width: 768px) {
-  .footer {
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .footer {
-    justify-content: center;
-  }
 }
 
 .logo {
