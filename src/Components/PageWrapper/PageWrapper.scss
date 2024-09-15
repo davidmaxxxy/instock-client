@@ -1,14 +1,22 @@
-@use "../../../styles/partials/variables.scss" as variables;
-@use "../../../styles/partials/mixin.scss" as mixin;
+@use "../../styles/partials/variables.scss" as variables;
+@use "../../styles/partials/mixin.scss" as mixin;
 
 .wrapper__container {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   &__section--container {
-      border-radius: 0.2rem;
+    border-radius: 0.2rem;
     background-color: variables.$primary-color-white;
+    width: 95vw;
+    @include mixin.tablet {
+      width: 60vw;
+      top: 12rem;
+    }
+    top: 11rem;
+    position: absolute;
+    z-index: 2;
   }
 
   &__header__container {
@@ -17,7 +25,19 @@
     align-items: center;
     flex-direction: column;
     border-bottom: 1px solid variables.$secondary-color-slate;
-    padding: 1.5rem 1rem 0.5rem 1rem;
+    padding: 3.5rem 2rem 2rem 2rem;
+    @include mixin.tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__header__button--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
     @include mixin.tablet {
       flex-direction: row;
     }
@@ -29,4 +49,5 @@
     gap: 1rem;
     width: 100%;
   }
+
 }

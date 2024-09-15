@@ -21,7 +21,7 @@ const PageWrapper = ({ title, children, location }) => {
             {(location === "Warehouse-details" ||
               location === "Warehouse-edit" ||
               location === "New-Warehouse" ||
-              location === "Inventory-edit" || location === "Inventory-edit-form" || location === "New-Inventory") && (
+              location === "Inventory-details" || location === "Inventory-edit-form" || location === "New-Inventory") && (
               <img
                 src={backIcon}
                 alt="back arrow"
@@ -33,7 +33,7 @@ const PageWrapper = ({ title, children, location }) => {
             <h1 className="wrapper__container__header__title">{title}</h1>
           </div>
           {(location === "Warehouses" || location === "Inventory") && (
-            <div>
+            <div className="wrapper__container__header__button--container">
               <button
                 type="button"
                 className="wrapper__container__header__button"
@@ -49,8 +49,8 @@ const PageWrapper = ({ title, children, location }) => {
             </div>
           )}
           {(location === "Warehouse-details" ||
-            location === "Inventory-edit") && (
-            <div>
+            location === "Inventory-details") && (
+            <div className="wrapper__container__header__button--container">
               <button
                 type="button"
                 className="wrapper__container__header__button"
