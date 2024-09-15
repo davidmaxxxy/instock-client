@@ -1,7 +1,7 @@
 import React from "react";
 import "./DynamicForm.scss";
 import DynamicFormInput from "./DynamicFormInput";
-import DynamicButton from "./DynamicButton";
+import DynamicButton from "../DynamicButton/DynamicButton";
 
 const DynamicForm = ({ handleButtonClick }) => {
   return (
