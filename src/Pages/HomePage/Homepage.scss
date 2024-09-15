@@ -2,7 +2,6 @@
 @use "../../styles/partials/mixin.scss" as mixin;
 
 .homepage__container {
-  background-color: variables.$background-color-grey;
   width: 100vw;
   height: 50vh;
   display: flex; /* Allow the homepage to float over the navbar */
