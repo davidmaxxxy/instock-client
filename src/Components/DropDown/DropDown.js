@@ -7,13 +7,10 @@ const DropDown = ({
   handleOnValueSelect,
   isError,
   placeholder,
-  width,
+
 }) => {
   return (
     <div
-      style={{
-        width: width,
-      }}
       className="select__container"
     >
       <select

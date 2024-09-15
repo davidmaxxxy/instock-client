@@ -1,10 +1,22 @@
-import React from "react";
-import  "./PageWrapper.scss"
+import React, { useState } from "react";
+import "./PageWrapper.scss";
 import backIcon from "../../assets/Icons/arrow_back-24px.svg";
 import { useNavigate } from "react-router-dom";
+import DynamicFormInput from "../DynamicForm/DynamicFormInput";
+import DynamicButton from "../DynamicButton/DynamicButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const PageWrapper = ({ title, children, location }) => {
+const PageWrapper = ({
+  title,
+  children,
+  location,
+  handleButtonClick,
+  handleInputValue,
+}) => {
   const navigate = useNavigate();
+  const [error] = useState(true);
+
   //   USE HISTORY FOR THE BACK BTN
   //
   return (
@@ -21,7 +33,9 @@ const PageWrapper = ({ title, children, location }) => {
             {(location === "Warehouse-details" ||
               location === "Warehouse-edit" ||
               location === "New-Warehouse" ||
-              location === "Inventory-details" || location === "Inventory-edit-form" || location === "New-Inventory") && (
+              location === "Inventory-details" ||
+              location === "Inventory-edit-form" ||
+              location === "New-Inventory") && (
               <img
                 src={backIcon}
                 alt="back arrow"
@@ -34,39 +48,40 @@ const PageWrapper = ({ title, children, location }) => {
           </div>
           {(location === "Warehouses" || location === "Inventory") && (
             <div className="wrapper__container__header__button--container">
-              <button
-                type="button"
-                className="wrapper__container__header__button"
-              >
-                arrow
-              </button>
-              <button
-                type="button"
-                className="wrapper__container__header__button"
-              >
-                arrow
-              </button>
+              <DynamicFormInput
+                isError={error}
+                onChange={handleInputValue}
+                placeholder="Search..."
+              />
+
+              <DynamicButton
+                title="Add New Warehouse"
+                colorClass="primary-color-indigo"
+                size="medium"
+                onClick={handleButtonClick}
+                Icon={() => <FontAwesomeIcon icon={faPlus} />}
+              />
             </div>
           )}
           {(location === "Warehouse-details" ||
             location === "Inventory-details") && (
             <div className="wrapper__container__header__button--container">
-              <button
-                type="button"
-                className="wrapper__container__header__button"
-              >
-                edit
-              </button>
+              <DynamicButton
+                title="Edit"
+                colorClass="primary-color-indigo"
+                size="medium"
+                onClick={handleButtonClick}
+                Icon={() => <FontAwesomeIcon icon={faPencilAlt} />}
+              />
             </div>
           )}
         </div>
-        <section>{children}</section>
+        <section className="wrapper__container__children--container">
+          {children}
+        </section>
       </section>
     </section>
   );
 };
 
 export default PageWrapper;
-
-
-

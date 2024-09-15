@@ -47,7 +47,10 @@
     justify-content: left;
     align-items: center;
     gap: 1rem;
-    width: 100%;
+  }
+
+  &__children--container{
+    padding: 2rem;
   }
 
 }

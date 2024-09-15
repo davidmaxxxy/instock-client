@@ -1,101 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
 import PageWrapper from "../PageWrapper/PageWrapper";
 import DropDown from "../DropDown/DropDown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import DynamicButton from "../DynamicButton/DynamicButton";
-import DynamicForm from "../DynamicForm/DynamicForm"; // Import DynamicForm
+import DynamicFormInput from "../DynamicForm/DynamicFormInput";
 
 const listOfWarehouse = ["Warehouse 1", "Warehouse 2"];
+
 const DisplayComponents = () => {
-  const getvalue = (value) => {
+  // Change to true when user tries to submit without fill all form inputs
+  const [error, setError] = useState(true);
+
+  const getSelectedValueFromDropDownSelect = (value) => {
+    // function to get the vale from the  dropdown list
+
     console.log(value);
   };
-
-  const handleClick = () => {
-    alert("Button clicked!");
+  const getValueFromDynamicFormInput = (value) => {
+    // function to get the vale from the input when u type in
+    console.log(value);
   };
+  const handleButtonClick = () => {
+    // function to handle the button click event
+    console.log("Button clicked");
+  };
+
+  //Strings to pass in to PageWrapper location prop  based Page
+  // Warehouses == ALL Warehouses
+  // Warehouse-details ==  Warehouse details page
+  // Warehouse-edit === Warehouse edit form page
+  // New-Warehouse === add New Warehouse  form page
+  // Inventory === All Inventory page
+  // Inventory-details === Inventory details page
+  // Inventory-edit-form ===  edit single Inventory form page
+  // New-Inventory === Add New Inventory form page
 
   return (
     <div>
+      {/* Import this component an write your code in between them  check HomePage for more example  */}
       <PageWrapper title={"Warehouse"} location={"Warehouses"}>
+        {/* <DynamicForm handleButtonClick={handleButtonClick} /> */}
+        <DynamicFormInput
+          isError={error}
+          onChange={getValueFromDynamicFormInput}
+          title="Warehouse Name"
+          placeholder="Warehouse Name"
+        />
+
         <DropDown
           options={listOfWarehouse}
-          handleOnValueSelect={getvalue}
-          isError={false}
+          handleOnValueSelect={getSelectedValueFromDropDownSelect}
+          isError={error}
           placeholder={"warehouse"}
           width={500}
         />
-      </PageWrapper>
-      <PageWrapper title={"Warehouse name"} location={"Warehouse-details"}>
-        <DropDown
-          options={listOfWarehouse}
-          handleOnValueSelect={getvalue}
-          isError={false}
-          placeholder={"warehouse"}
-          width={500}
+
+        
+        <h2>Test Dynamic Buttons</h2>
+
+        <DynamicButton
+          title="Add New Warehouse"
+          colorClass="primary-color-indigo"
+          size="large"
+          onClick={handleButtonClick}
+          Icon={() => <FontAwesomeIcon icon={faPlus} />}
         />
-      </PageWrapper>
-      <PageWrapper title={"Edit Warehouse"} location={"Warehouse-edit"}>
-        <DropDown
-          options={listOfWarehouse}
-          handleOnValueSelect={getvalue}
-          isError={false}
-          placeholder={"warehouse"}
-          width={500}
+
+        <DynamicButton
+          title="Edit"
+          colorClass="primary-color-indigo"
+          size="medium"
+          onClick={handleButtonClick}
+          Icon={() => <FontAwesomeIcon icon={faPencilAlt} />}
         />
-      </PageWrapper>
-      <PageWrapper title={"Add New Warehouse"} location={"New-Warehouse"}>
-        <DropDown
-          options={listOfWarehouse}
-          handleOnValueSelect={getvalue}
-          isError={false}
-          placeholder={"warehouse"}
-          width={500}
+
+        <DynamicButton
+          title="Cancel"
+          colorClass="primary-color-white"
+          size="small"
+          onClick={handleButtonClick}
         />
-      </PageWrapper>
-      <PageWrapper title={"Inventory"} location={"Inventory"}>
-        <DropDown
-          options={listOfWarehouse}
-          handleOnValueSelect={getvalue}
-          isError={false}
-          placeholder={"warehouse"}
-          width={500}
+        <DynamicButton
+          title="Save"
+          colorClass="primary-color-indigo"
+          size="small"
+          onClick={handleButtonClick}
         />
-      </PageWrapper>
-      <PageWrapper title={"Inventory name "} location={"Inventory-details"}>
-        <DropDown
-          options={listOfWarehouse}
-          handleOnValueSelect={getvalue}
-          isError={false}
-          placeholder={"warehouse"}
-          width={500}
-        />
-      </PageWrapper>
-      <PageWrapper
-        title={"Edit Inventory Item"}
-        location={"Inventory-edit-form"}
-      >
-        <DropDown
-          options={listOfWarehouse}
-          handleOnValueSelect={getvalue}
-          isError={false}
-          placeholder={"warehouse"}
-          width={500}
-        />
-      </PageWrapper>
-      <PageWrapper title={"Add New Inventory Item"} location={"New-Inventory"}>
-        <DropDown
-          options={listOfWarehouse}
-          handleOnValueSelect={getvalue}
-          isError={false}
-          placeholder={"warehouse"}
-          width={500}
+
+        <DynamicButton
+          title="Delete"
+          colorClass="supporting-color-red"
+          size="small"
+          onClick={handleButtonClick}
         />
       </PageWrapper>
 
       {/* Embed the DynamicForm component */}
-      <DynamicForm handleButtonClick={handleClick} />
+      {/* <DynamicForm handleButtonClick={handleButtonClick} />
 
       <section className="button-container">
         <h2>Test Dynamic Buttons</h2>
@@ -104,38 +106,38 @@ const DisplayComponents = () => {
           title="Add New Warehouse"
           colorClass="primary-color-indigo"
           size="large"
-          onClick={handleClick}
-          icon={() => <FontAwesomeIcon icon={faPlus} />}
+          onClick={handleButtonClick}
+          Icon={() => <FontAwesomeIcon Icon={faPlus} />}
         />
 
         <DynamicButton
           title="Edit"
           colorClass="primary-color-indigo"
           size="medium"
-          onClick={handleClick}
-          icon={() => <FontAwesomeIcon icon={faPencilAlt} />}
+          onClick={handleButtonClick}
+          Icon={() => <FontAwesomeIcon Icon={faPencilAlt} />}
         />
 
         <DynamicButton
           title="Cancel"
           colorClass="primary-color-white"
           size="small"
-          onClick={handleClick}
+          onClick={handleButtonClick}
         />
         <DynamicButton
           title="Save"
           colorClass="primary-color-indigo"
           size="small"
-          onClick={handleClick}
+          onClick={handleButtonClick}
         />
 
         <DynamicButton
           title="Delete"
           colorClass="supporting-color-red"
           size="small"
-          onClick={handleClick}
+          onClick={handleButtonClick}
         />
-      </section>
+      </section> */}
     </div>
   );
 };

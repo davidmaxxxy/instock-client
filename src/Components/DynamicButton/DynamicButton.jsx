@@ -1,14 +1,14 @@
 import React from "react";
-import "../DynamicButton/DynamicButton.scss";
+import "./DynamicButton.scss";
 
-const DynamicButton = ({ title, colorClass, size, onClick, icon: Icon }) => {
+const DynamicButton = ({ title, colorClass, size, onClick, Icon }) => {
   return (
     <button
       className={`button ${size} ${colorClass} ${Icon ? "with-icon" : ""} `}
       onClick={onClick}
     >
       {Icon && <Icon className="button-icon" />}
-      {title}
+      <p className="button-title">{title && title}</p>
     </button>
   );
 };

@@ -2,16 +2,16 @@
 @use "../../styles/partials/mixin.scss" as mixin;
 
 .select__container {
-  position: relative; /* For positioning custom icon */
+  position: relative;
+  margin: 0 0.5rem;
   width: 100%;
-  margin: 0 0.5rem; /* Margin for spacing around the container */
-
+  min-width: 10rem;
+  
   select {
-    padding: 0.5rem 2.5rem 0.5rem 0.5rem; /* Padding adjusted to leave space for custom icon */
+    padding: 1rem;
     border-radius: 20px;
     width: 100%;
     border: 0.1rem solid variables.$secondary-color-cloud;
-    font-size: 1rem;
 
     &:focus,
     &:active {
@@ -24,10 +24,8 @@
 
     &::placeholder {
       color: variables.$secondary-color-slate;
-      font-size: 1rem; /* Adjust font-size as needed */
+      font-size: 1.5rem; 
     }
-
-    /* Hide default arrow and apply a custom background image if needed */
     background-size: 1rem;
   }
 }
