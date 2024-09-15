@@ -5,12 +5,16 @@ import AppNavigations from "./AppNavigations/AppNavigations";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 
+
 function App() {
+ 
+
   return (
     <Router>
       <main className="App">
         <Header />
-         <AppNavigations />
+        <AppNavigations />
+
         <Footer />
       </main>
     </Router>

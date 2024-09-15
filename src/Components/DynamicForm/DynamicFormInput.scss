@@ -1,0 +1,36 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.dynamic-form {
+  &__group {
+    margin-bottom: 20px;
+
+    @include tablet {
+      padding-right: 2rem;
+    }
+  }
+
+  &__label {
+    margin-bottom: 5px;
+    display: block;
+    color: $primary-color-black;
+    text-align: left;
+    margin-left: 0.5rem;
+    font-weight: bold;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid $secondary-color-cloud; // Ensure the variable is defined in variables.scss
+    border-radius: 20px;
+    transition: border-color 0.3s ease;
+    @include fontSmall;
+
+    &:focus {
+      border-color: $primary-color-indigo; // Prefixed with the 'vars' namespace
+      outline: none;
+    }
+  }
+}
