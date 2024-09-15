@@ -1,3 +1,29 @@
-@use "../../../styles/global.scss" as *;
-@use "../../../styles/partials/mixin.scss" as *;
-@use "../../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.main-heading{
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    background: linear-gradient(to bottom, $background-color-graphite 6rem, transparent 20%);
+}
+
+.main-heading-container{
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+   text-align: left;
+   padding-top: 2.4rem;
+   padding-left: 2.4rem;
+   padding-right: 2.4rem;
+   background-color: $primary-color-white;
+   border-radius: 0.2rem;
+}
+.main-heading-nav{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    &__search{
+        margin-bottom: 1.6rem;
+    }
+}
