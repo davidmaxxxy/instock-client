@@ -2,10 +2,19 @@ import React from "react";
 import "./DynamicForm.scss";
 import DynamicFormInput from "./DynamicFormInput";
 import DynamicButton from "../DynamicButton/DynamicButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-const DynamicForm = ({ handleButtonClick }) => {
+const DynamicForm = ({ handleButtonClick, Icon, headerTitle }) => {
   return (
     <div className="dynamic-form">
+      <div className="dynamic-form__header-container">
+        <FontAwesomeIcon
+          icon={faArrowLeft}
+          className="dynamic-form__back-icon"
+        />
+        <h1 className="dynamic-form__header-title">Edit Warehouse Details</h1>
+      </div>
       <div className="dynamic-form__container">
         <div className="dynamic-form__section">
           <h2 className="dynamic-form__section-title">Warehouse Details</h2>

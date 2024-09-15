@@ -4,7 +4,10 @@ import "./DynamicFormInput.scss";
 const DynamicFormInput = ({ title, placeholder, onChange, value }) => {
   return (
     <div className="dynamic-form__group">
-      <label className="dynamic-form__label">{title}</label>
+      <label className="dynamic-form__label">
+        <h3 className="dynamic-form__label-title"></h3>
+        {title}
+      </label>
       <input
         className="dynamic-form__input"
         type="text"
