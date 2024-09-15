@@ -1,9 +1,29 @@
-import React from 'react'
+import React from "react";
+import "./Homepage.scss";
+import PageWrapper from "../../Components/PageWrapper/PageWrapper";
+import DropDown from "../../Components/DropDown/DropDown";
+
+const listOfWarehouse = ["Warehouse 1", "Warehouse 2"];
 
 const Homepage = () => {
+  const getSelectedValue = (value) => {
+    console.log(value);
+  };
   return (
-    <div>Homepage</div>
-  )
-}
+    <main className="homepage__container">
+      <section className="homepage__container--overlay">
+        <PageWrapper title={"Warehouses"} location={"Warehouses"}>
+          <DropDown
+            options={listOfWarehouse}
+            handleOnValueSelect={getSelectedValue}
+            isError={false}
+            placeholder={"warehouse"}
+            width={500}
+          />
+        </PageWrapper>
+      </section>
+    </main>
+  );
+};
 
-export default Homepage
+export default Homepage;

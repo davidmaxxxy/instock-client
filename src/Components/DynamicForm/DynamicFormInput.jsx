@@ -1,18 +1,14 @@
 import React from "react";
 import "./DynamicFormInput.scss";
 
-const DynamicFormInput = ({ title, placeholder, onChange, value }) => {
+const DynamicFormInput = ({ placeholder, onChange, value, isError }) => {
   return (
     <div className="dynamic-form__group">
-      <label className="dynamic-form__label">
-        <h3 className="dynamic-form__label-title"></h3>
-        {title}
-      </label>
       <input
-        className="dynamic-form__input"
+        className={`dynamic-form__input ${isError ? "isError" : ""} `}
         type="text"
         placeholder={placeholder}
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.value)}
         value={value}
       />
     </div>
