@@ -2,26 +2,13 @@
 @use "../../styles/partials/variables.scss" as *;
 
 .dynamic-form {
-  &__group {
+  &__input {
     @include tablet {
       padding-right: 2rem;
     }
-  }
-
-  &__label {
-    margin-bottom: 5px;
-    display: block;
-    color: $primary-color-black;
-    text-align: left;
-    margin-left: 0.5rem;
-    font-weight: bold;
-  }
-
-  &__input {
-    width: 100%;
     padding: 1rem;
-    font-size: 1.6rem;
-    border: 1px solid $secondary-color-cloud; // Ensure the variable is defined in variables.scss
+    width: auto;
+    border: 1px solid $secondary-color-cloud;
     border-radius: 2rem;
     transition: border-color 0.3s ease;
     @include fontSmall;
@@ -29,8 +16,11 @@
       border: 0.1rem solid $supporting-color-red;
     }
     &:focus {
-      border-color: $primary-color-indigo; // Prefixed with the 'vars' namespace
+      border-color: $primary-color-indigo;
       outline: none;
+    }
+    &::placeholder {
+      font-size: 1.6rem;
     }
   }
 }

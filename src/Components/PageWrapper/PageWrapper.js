@@ -15,7 +15,7 @@ const PageWrapper = ({
   handleInputValue,
 }) => {
   const navigate = useNavigate();
-  const [error] = useState(true);
+  const [error] = useState(false);
 
   //   USE HISTORY FOR THE BACK BTN
   //
@@ -26,7 +26,7 @@ const PageWrapper = ({
           className="wrapper__container__header__container"
           style={{
             flexDirection:
-              location === "Warehouse-details" ? "column" : undefined,
+              location === "Warehouse-details" ? "row" : undefined,
           }}
         >
           <div className="wrapper__container__header--title-container">
@@ -46,7 +46,7 @@ const PageWrapper = ({
             )}
             <h1 className="wrapper__container__header__title">{title}</h1>
           </div>
-          {(location === "Warehouses" || location === "Inventory") && (
+          {location === "Warehouses" || location === "Inventory" ? (
             <div className="wrapper__container__header__button--container">
               <DynamicFormInput
                 isError={error}
@@ -59,22 +59,24 @@ const PageWrapper = ({
                 colorClass="primary-color-indigo"
                 size="medium"
                 onClick={handleButtonClick}
-                Icon={() => <FontAwesomeIcon icon={faPlus} />}
+                Icon={<FontAwesomeIcon icon={faPlus} size="1x" />}
               />
             </div>
-          )}
-          {(location === "Warehouse-details" ||
-            location === "Inventory-details") && (
+          ) : location === "Warehouse-details" ||
+            location === "Inventory-details" ? (
             <div className="wrapper__container__header__button--container">
               <DynamicButton
-                title="Edit"
+                // title="Edit"
                 colorClass="primary-color-indigo"
                 size="medium"
                 onClick={handleButtonClick}
-                Icon={() => <FontAwesomeIcon icon={faPencilAlt} />}
+                Icon={<FontAwesomeIcon icon={faPencilAlt} size="1x" />}
               />
             </div>
+          ) : (
+            ""
           )}
+          
         </div>
         <section className="wrapper__container__children--container">
           {children}

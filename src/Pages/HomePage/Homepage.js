@@ -17,8 +17,7 @@ const Homepage = () => {
             options={listOfWarehouse}
             handleOnValueSelect={getSelectedValue}
             isError={false}
-            placeholder={"warehouse"}
-            width={500}
+            placeholder={"Please Select"}
           />
         </PageWrapper>
       </section>

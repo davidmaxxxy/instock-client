@@ -2,13 +2,12 @@
 @use "../../styles/partials/mixin.scss" as mixin;
 
 .select__container {
-  position: relative;
   margin: 0 0.5rem;
   width: 100%;
   min-width: 10rem;
   
   select {
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 20px;
     width: 100%;
     border: 0.1rem solid variables.$secondary-color-cloud;
