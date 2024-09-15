@@ -14,7 +14,6 @@ function App() {
       <main className="App">
         <Header />
         <AppNavigations />
-
         <Footer />
       </main>
     </Router>

@@ -10,23 +10,31 @@
     border-radius: 0.2rem;
     background-color: variables.$primary-color-white;
     width: 95vw;
-    @include mixin.tablet {
-      width: 60vw;
-      top: 12rem;
-    }
     top: 11rem;
     position: absolute;
     z-index: 2;
+
+    @include mixin.tablet {
+      width: 85vw;
+      top: 12rem;
+    }
+
+    @include mixin.desktop {
+      width: 70vw;
+    }
   }
 
   &__header__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     border-bottom: 1px solid variables.$secondary-color-slate;
     padding: 3.5rem 2rem 2rem 2rem;
+
+    
     @include mixin.tablet {
+      justify-content: space-between;
       flex-direction: row;
     }
   }
@@ -34,23 +42,27 @@
   &__header__button--container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
-    padding-top: 1rem;
+    padding-top: 3rem;
+    width: 100%;
+
     @include mixin.tablet {
+      padding-top: 0;
       flex-direction: row;
+      justify-content: right;
     }
   }
+
+
   &__header--title-container {
     display: flex;
     justify-content: left;
     align-items: center;
     gap: 1rem;
+    width: 100%;
   }
 
-  &__children--container{
+  &__children--container {
     padding: 2rem;
   }
-
 }

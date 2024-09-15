@@ -7,7 +7,7 @@ const DynamicButton = ({ title, colorClass, size, onClick, Icon }) => {
       className={`button ${size} ${colorClass} ${Icon ? "with-icon" : ""} `}
       onClick={onClick}
     >
-      {Icon && <Icon className="button-icon" />}
+      {Icon && Icon}
       <p className="button-title">{title && title}</p>
     </button>
   );

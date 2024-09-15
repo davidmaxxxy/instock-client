@@ -38,7 +38,7 @@ const DisplayComponents = () => {
 
   return (
     <div>
-      {/* Import this component an write your code in between them  check HomePage for more example  */}
+      {/* Import this component and write your code in between them  check HomePage for more example  */}
       <PageWrapper title={"Warehouse"} location={"Warehouses"}>
         {/* <DynamicForm handleButtonClick={handleButtonClick} /> */}
         <DynamicFormInput
@@ -95,49 +95,6 @@ const DisplayComponents = () => {
           onClick={handleButtonClick}
         />
       </PageWrapper>
-
-      {/* Embed the DynamicForm component */}
-      {/* <DynamicForm handleButtonClick={handleButtonClick} />
-
-      <section className="button-container">
-        <h2>Test Dynamic Buttons</h2>
-
-        <DynamicButton
-          title="Add New Warehouse"
-          colorClass="primary-color-indigo"
-          size="large"
-          onClick={handleButtonClick}
-          Icon={() => <FontAwesomeIcon Icon={faPlus} />}
-        />
-
-        <DynamicButton
-          title="Edit"
-          colorClass="primary-color-indigo"
-          size="medium"
-          onClick={handleButtonClick}
-          Icon={() => <FontAwesomeIcon Icon={faPencilAlt} />}
-        />
-
-        <DynamicButton
-          title="Cancel"
-          colorClass="primary-color-white"
-          size="small"
-          onClick={handleButtonClick}
-        />
-        <DynamicButton
-          title="Save"
-          colorClass="primary-color-indigo"
-          size="small"
-          onClick={handleButtonClick}
-        />
-
-        <DynamicButton
-          title="Delete"
-          colorClass="supporting-color-red"
-          size="small"
-          onClick={handleButtonClick}
-        />
-      </section> */}
     </div>
   );
 };
