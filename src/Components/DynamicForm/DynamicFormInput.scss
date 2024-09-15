@@ -4,6 +4,7 @@
 .dynamic-form {
   &__group {
     margin-bottom: 20px;
+    padding: 0 10px;
 
     @include tablet {
       padding-right: 2rem;
@@ -21,15 +22,15 @@
 
   &__input {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid $secondary-color-cloud; // Ensure the variable is defined in variables.scss
+    padding: 12px 5px 12px 10px;
+    @include fontSmall;
+    border: 1px solid $secondary-color-cloud;
     border-radius: 20px;
     transition: border-color 0.3s ease;
     @include fontSmall;
 
     &:focus {
-      border-color: $primary-color-indigo; // Prefixed with the 'vars' namespace
+      border-color: $primary-color-indigo;
       outline: none;
     }
   }
