@@ -1,0 +1,126 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.dynamic-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid $secondary-color-cloud;
+
+  @include tablet {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 30px 0;
+    // margin-bottom: 20px;
+    border-bottom: 1px solid $secondary-color-cloud;
+
+    .dynamic-form__back-icon {
+      margin-right: 15px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+
+      @include tablet {
+        @include fontLarge;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // border: 1px solid $secondary-color-cloud;
+    padding: 20px;
+    gap: 20px;
+
+    // border: solid red;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+      // border-left: 1px solid $secondary-color-cloud;
+    }
+  }
+
+  // Form section
+  &__section {
+    flex: 1;
+    padding: 20px;
+    // border: solid red;
+
+    &-title {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; // Ensure all elements in group are aligned left
+      justify-content: flex-start;
+      width: 100%; // Ensures input takes full width
+      margin-bottom: 15px;
+
+      label {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+        text-align: left;
+        width: 100%; // Makes sure the label is full width for alignment
+      }
+
+      input {
+        font-size: 1rem;
+        padding: 10px;
+        border: 1px solid $secondary-color-cloud;
+        border-radius: 5px;
+        width: 100%; // Ensures input field takes full width
+        text-align: left;
+
+        &::placeholder {
+          font-size: 1rem;
+          color: $secondary-color-slate;
+        }
+      }
+    }
+
+    @include tablet {
+      padding: 20px;
+      border-right: 1px solid $secondary-color-cloud;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // gap: 10px;
+    // margin-top: 20px;
+    // width: 100%;
+    // border: solid 1px;
+    background-color: $background-color-grey;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }
+}
