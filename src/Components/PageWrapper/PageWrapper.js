@@ -40,7 +40,7 @@ const PageWrapper = ({
                 src={backIcon}
                 alt="back arrow"
                 onClick={() => {
-                  navigate("/");
+                  navigate(-1);
                 }}
               />
             )}
@@ -66,7 +66,7 @@ const PageWrapper = ({
             location === "Inventory-details" ? (
             <div className="wrapper__container__header__button--container">
               <DynamicButton
-                // title="Edit"
+                title="Edit"
                 colorClass="primary-color-indigo"
                 size="medium"
                 onClick={handleButtonClick}
