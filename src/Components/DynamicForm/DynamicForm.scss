@@ -6,13 +6,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   border: 1px solid $secondary-color-cloud;
-  border: 1px solid red;
 
   @include tablet {
     width: 80%;
     margin: 0 auto;
+    margin-top: 5rem;
   }
 
   &__header-container {
