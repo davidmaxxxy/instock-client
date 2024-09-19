@@ -9,6 +9,7 @@
   border: 1px solid $secondary-color-cloud;
   border-radius: 5px;
   margin-top: 5rem;
+  border: solid red;
 
   @include tablet {
     width: 90%;

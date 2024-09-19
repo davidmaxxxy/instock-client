@@ -6,6 +6,7 @@
   border: 1px solid #bdc5d5;
   border-radius: 5px;
   margin-top: 5rem;
+  border: solid red;
 }
 @media screen and (min-width: 768px) {
   .dynamic-form {

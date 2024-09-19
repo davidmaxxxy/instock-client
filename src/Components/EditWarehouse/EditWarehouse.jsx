@@ -5,14 +5,11 @@ import DynamicButton from "../DynamicButton/DynamicButton";
 import DynamicForm from "../DynamicForm/DynamicForm";
 import DynamicFormInput from "../DynamicForm/DynamicFormInput";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import PageWrapper from "../PageWrapper/PageWrapper";
 
 const EditWarehouse = ({ handleClick }) => {
   return (
-    <DynamicForm
-      handleButtonClick={handleClick}
-      headerTitle="Edit Warehouse"
-      Icon={faArrowLeft}
-    >
+    <PageWrapper title="Edit Warehouse" location="Warehouse-edit">
       <div className="dynamic-form__container">
         <div className="dynamic-form__section">
           <h2 className="dynamic-form__section-title">Warehouse Details</h2>
@@ -65,7 +62,7 @@ const EditWarehouse = ({ handleClick }) => {
           onClick={handleClick}
         />
       </div>
-    </DynamicForm>
+    </PageWrapper>
   );
 };
 
