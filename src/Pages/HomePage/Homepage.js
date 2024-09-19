@@ -12,7 +12,7 @@ const Homepage = () => {
   return (
     <section className="homepage__container">
       <section className="homepage__container--overlay">
-        <PageWrapper title={"Warehouses"} location={"Warehouses"}>
+        <PageWrapper title={"Warehouses"} location={"Warehouse-edit"}>
           <DropDown
             options={listOfWarehouse}
             handleOnValueSelect={getSelectedValue}
@@ -25,6 +25,7 @@ const Homepage = () => {
             isError={false}
             placeholder={"Please Select"}
           />
+          <p>ddd</p>
         </PageWrapper>
       </section>
     </section>

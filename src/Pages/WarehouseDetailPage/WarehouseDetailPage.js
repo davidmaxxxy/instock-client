@@ -1,22 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./WarehouseDetailPage.scss";
 import PageWrapper from "../../Components/PageWrapper/PageWrapper";
 import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 const WarehouseDetailPage = () => {
   const { warehouseName, warehouseId } = useParams();
   const navigate = useNavigate();
-  const [warehouse, setWarehouse] = useState({
-    warehouse_name: "Graeme Lyon Warehouse Manager",
-    warehouse_address: "33 Pearl Street SW, Washington, USA",
-    warehouse_phone: " +1 (647) 504-0911",
-    warehouse_email: " glyon@instock.com",
-  });
+  const [warehouse, setWarehouse] = useState({});
+  const [loading, setLoading] = useState(false);
+
   const handleEditWarehouseNavigation = () => {
     // Navigate to the warehouse Edit page with the warehouse ID
-    // THIS route is example Route but can be used if u want to
     navigate(`/warehouse/${warehouseId}/edit`);
   };
+
+  useEffect(() => {
+    // Fetch the warehouse data from the API
+    const getWarehouseDetailByWarehouseId = async () => {
+      setLoading(true);
+      try {
+        const { status, data } = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}warehouses/${warehouseId}`
+        );
+        if (status === 200) setWarehouse(data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getWarehouseDetailByWarehouseId();
+  }, [warehouseName, warehouseId]);
 
   return (
     <PageWrapper
@@ -24,44 +38,59 @@ const WarehouseDetailPage = () => {
       handleButtonClick={handleEditWarehouseNavigation}
       location={"Warehouse-details"}
     >
-      <section className="Warehouse-details__container">
-        <article className="Warehouse-details__infor--container">
-          <h2 className="Warehouse-details__infor--container-header">
-            WAREHOUSE ADDRESS:
-          </h2>
-          <p className="Warehouse-details__infor--container-text">
-            {warehouse.warehouse_address}
-          </p>
-        </article>
+      {!loading ? (
+        <>
+          <section className="Warehouse-details__container">
+            <article className="Warehouse-details__infor--container address--padding">
+              <h2 className="Warehouse-details__infor--container-header">
+                WAREHOUSE ADDRESS:
+              </h2>
+              <p className="Warehouse-details__infor--container-text">
+                {warehouse.address}
+              </p>
+            </article>
 
-        <article className="Warehouse-details__infor">
-          <div className="Warehouse-details__tablet--divider" />
-          <article className="Warehouse-details__infor--container">
-            <h2 className="Warehouse-details__infor--container-header">
-              CONTACT NAME:
-            </h2>
-            <p className="Warehouse-details__infor--container-text">
-              {warehouse.warehouse_name}
-            </p>
-          </article>
-          <article className="Warehouse-details__infor--container">
-            <h2 className="Warehouse-details__infor--container-header">
-              CONTACT INFORMATION:
-            </h2>
-            <p className="Warehouse-details__infor--container-text">
-              {warehouse.warehouse_phone}
-            </p>
-            <p className="Warehouse-details__infor--container-text">
-              {warehouse.warehouse_email}
-            </p>
-          </article>
-        </article>
-        <div className="Warehouse-details__mobile--divider" />
-      </section>
+            <article className="Warehouse-details__infor">
+              <div className="Warehouse-details__tablet--divider" />
+              <article className="Warehouse-details__infor--container">
+                <h2 className="Warehouse-details__infor--container-header">
+                  CONTACT NAME:
+                </h2>
+                <p className="Warehouse-details__infor--container-text">
+                  {warehouse.warehouse_name}
+                </p>
+              </article>
+              <article className="Warehouse-details__infor--container">
+                <h2 className="Warehouse-details__infor--container-header">
+                  CONTACT INFORMATION:
+                </h2>
+                <p className="Warehouse-details__infor--container-text">
+                  {warehouse.contact_phone}
+                </p>
+                <p className="Warehouse-details__infor--container-text">
+                  {warehouse.contact_email}
+                </p>
+              </article>
+            </article>
+            <div className="Warehouse-details__mobile--divider" />
 
-      {/* Warehouse Inventory Table Goes here  */}
-      <section>{/* ........... */}</section>
-      {/* Warehouse Inventory Table Goes here  */}
+
+
+
+          </section>
+          {/* Warehouse Inventory Table Goes here  */}
+          <section>{/* Inventory Tables goes here  */}</section>
+          {/* Warehouse Inventory Table Goes here  */}
+        </>
+      ) : (
+        <div>
+          <div className="spinner">
+            <div className="">
+              <p>loading...</p>
+            </div>
+          </div>
+        </div>
+      )}
     </PageWrapper>
   );
 };

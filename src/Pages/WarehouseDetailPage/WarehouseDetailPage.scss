@@ -8,6 +8,7 @@
     gap: 3rem;
     padding: 1rem 0.5rem;
     @include tablet {
+      // justify-content:center;
       padding: 1rem 2rem;
       flex-direction: row;
     }
@@ -18,18 +19,20 @@
     }
   }
 
+
   &__infor {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
+    justify-content: space-between;
     @include tablet {
-      align-items: normal;
+      justify-content: center;
+      gap: 5rem;
     }
     @include desktop {
-      gap: 2rem;
+      gap: 5rem;
     }
     &--container {
+      
       &-header {
         font-size: 1.5rem;
         color: $secondary-color-slate;
@@ -55,9 +58,16 @@
     display: none;
     @include tablet {
       height: 100%;
-      width: 2px;
+      width: 1px;
       background-color: $secondary-color-slate;
       display: block;
     }
   }
+}
+
+
+.address--padding{
+// @include desktop {
+      //   padding-right: 20rem;
+      // }
 }
