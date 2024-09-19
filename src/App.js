@@ -7,14 +7,11 @@ import Footer from "./Components/Footer/Footer";
 import EditWarehouse from "./Components/EditWarehouse/EditWarehouse";
 
 function App() {
-
-
   return (
     <Router>
       <main className="App">
         <Header />
         <AppNavigations />
-      
         <Footer />
       </main>
     </Router>

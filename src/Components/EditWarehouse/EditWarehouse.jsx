@@ -52,10 +52,13 @@ const EditWarehouse = ({ handleClick }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  handleSubmit = async () => {
+  const handleSubmit = async () => {
     if (validateForm()) {
       try {
-        const response = await axios.put(`/api/warehouses/${id}`, formData);
+        const response = await axios.put(
+          `http://localhost:3000/api/warehouses/${id}`,
+          formData
+        );
 
         if (response.status === 200) {
           alert("Warehouse has been updated successfully");
@@ -75,96 +78,99 @@ const EditWarehouse = ({ handleClick }) => {
   };
 
   return (
-    <PageWrapper title="Edit Warehouse" location="Warehouse-edit">
-      <div className="dynamic-form__container">
-        <div className="dynamic-form__section">
-          <h2 className="dynamic-form__section-title">Warehouse Details</h2>
-          <DynamicFormInput
-            type="text"
-            title="Warehouse Name"
-            placeholder="Warehouse Name"
-            onChange={(value) => handleChange("warehouse_name", value)}
-            value={formData.warehouse_name}
-            isError={errors.warehouse_name}
-          />
-          <DynamicFormInput
-            type="text"
-            title="Street Address"
-            placeholder="Street Address"
-            onChange={(value) => handleChange("address", value)}
-            value={formData.address}
-            isError={errors.address}
-          />
-          <DynamicFormInput
-            type="text"
-            title="City"
-            placeholder="City"
-            onChange={(value) => handleChange("city", value)}
-            value={formData.city}
-            isError={errors.city}
-          />
-          <DynamicFormInput
-            type="text"
-            title="Country"
-            placeholder="Country"
-            onChange={(value) => handleChange("country", value)}
-            value={formData.country}
-            isError={errors.country}
-          />
+    <div>
+      <h1>Edit Warehouse Page</h1>
+      <PageWrapper title="Edit Warehouse" location="Warehouse-edit">
+        <div className="dynamic-form__container">
+          <div className="dynamic-form__section">
+            <h2 className="dynamic-form__section-title">Warehouse Details</h2>
+            <DynamicFormInput
+              type="text"
+              title="Warehouse Name"
+              placeholder="Warehouse Name"
+              onChange={(value) => handleChange("warehouse_name", value)}
+              value={formData.warehouse_name}
+              isError={errors.warehouse_name}
+            />
+            <DynamicFormInput
+              type="text"
+              title="Street Address"
+              placeholder="Street Address"
+              onChange={(value) => handleChange("address", value)}
+              value={formData.address}
+              isError={errors.address}
+            />
+            <DynamicFormInput
+              type="text"
+              title="City"
+              placeholder="City"
+              onChange={(value) => handleChange("city", value)}
+              value={formData.city}
+              isError={errors.city}
+            />
+            <DynamicFormInput
+              type="text"
+              title="Country"
+              placeholder="Country"
+              onChange={(value) => handleChange("country", value)}
+              value={formData.country}
+              isError={errors.country}
+            />
+          </div>
+
+          <div className="dynamic-form__section">
+            <h2 className="dynamic-form__section-title">Contact Details</h2>
+            <DynamicFormInput
+              type="text"
+              title="Contact Name"
+              placeholder="Contact Name"
+              onChange={(value) => handleChange("contact_name", value)}
+              value={formData.contact_name}
+              isError={errors.contact_name}
+            />
+            <DynamicFormInput
+              type="text"
+              title="Position"
+              placeholder="Position"
+              onChange={(value) => handleChange("contact_position", value)}
+              value={formData.contact_position}
+              isError={errors.contact_position}
+            />
+            <DynamicFormInput
+              type="text"
+              title="Phone Number"
+              placeholder="Phone"
+              onChange={(value) => handleChange("contact_phone", value)}
+              value={formData.contact_phone}
+              isError={errors.contact_phone}
+            />
+            <DynamicFormInput
+              type="text"
+              title="Email"
+              placeholder="Email"
+              onChange={(value) => handleChange("contact_email", value)}
+              value={formData.contact_email}
+              isError={errors.contact_email}
+            />
+          </div>
         </div>
 
-        <div className="dynamic-form__section">
-          <h2 className="dynamic-form__section-title">Contact Details</h2>
-          <DynamicFormInput
-            type="text"
-            title="Contact Name"
-            placeholder="Contact Name"
-            onChange={(value) => handleChange("contact_name", value)}
-            value={formData.contact_name}
-            isError={errors.contact_name}
+        <div className="dynamic-form__button-container">
+          <DynamicButton
+            title="Cancel"
+            colorClass="primary-color-white"
+            size="large"
+            onClick={handleClick}
           />
-          <DynamicFormInput
-            type="text"
-            title="Position"
-            placeholder="Position"
-            onChange={(value) => handleChange("contact_position", value)}
-            value={formData.contact_position}
-            isError={errors.contact_position}
-          />
-          <DynamicFormInput
-            type="text"
-            title="Phone Number"
-            placeholder="Phone"
-            onChange={(value) => handleChange("contact_phone", value)}
-            value={formData.contact_phone}
-            isError={errors.contact_phone}
-          />
-          <DynamicFormInput
-            type="text"
-            title="Email"
-            placeholder="Email"
-            onChange={(value) => handleChange("contact_email", value)}
-            value={formData.contact_email}
-            isError={errors.contact_email}
+          <DynamicButton
+            title="Save"
+            colorClass="primary-color-indigo"
+            size="large"
+            onClick={handleSubmit}
           />
         </div>
-      </div>
-
-      <div className="dynamic-form__button-container">
-        <DynamicButton
-          title="Cancel"
-          colorClass="primary-color-white"
-          size="large"
-          onClick={handleClick}
-        />
-        <DynamicButton
-          title="Save"
-          colorClass="primary-color-indigo"
-          size="large"
-          onClick={handleSubmit}
-        />
-      </div>
-    </PageWrapper>
+      </PageWrapper>
+    </div>
   );
 };
 
