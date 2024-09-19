@@ -42,22 +42,26 @@ const EditWarehouse = ({ handleClick }) => {
             title="Position"
             placeholder="Position"
           />
+          <DynamicFormInput
+            type="text"
+            title="Phone Number"
+            placeholder="Phone"
+          />
           <DynamicFormInput type="text" title="Email" placeholder="Email" />
-          <DynamicFormInput type="text" title="Phone" placeholder="Phone" />
         </div>
       </div>
 
       <div className="dynamic-form__button-container">
         <DynamicButton
           title="Cancel"
-          colorClass="supporting-color-red"
-          size="medium"
+          colorClass="primary-color-white"
+          size="large"
           onClick={handleClick}
         />
         <DynamicButton
           title="Save"
           colorClass="primary-color-indigo"
-          size="medium"
+          size="large"
           onClick={handleClick}
         />
       </div>

@@ -3,24 +3,42 @@
 
 .dynamic-form {
   &__label {
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: left;
     width: 90%;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: left;
+      width: 90%;
+      margin-bottom: 0.3rem;
+    }
   }
 
   &__input {
-    font-size: 1rem;
-    padding: 10px;
+    font-size: 1.5rem;
+    padding: 1.5rem;
     border: 1px solid $secondary-color-cloud;
     border-radius: 20px;
     width: 90%;
     text-align: left;
     margin-bottom: 1.5rem;
 
+    @include tablet {
+      font-size: 1.2rem;
+      padding: 10px;
+      border: 1px solid $secondary-color-cloud;
+      border-radius: 20px;
+      width: 90%;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
     &::placeholder {
-      font-size: 1rem;
+      font-size: 1.5rem;
       color: $secondary-color-slate;
     }
   }

@@ -2,7 +2,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: none;
   border-radius: 3rem;
   cursor: pointer;
   color: white;
@@ -18,7 +17,13 @@
   font-size: 1.5rem;
 }
 .button.large {
-  font-size: 1.25em;
+  font-size: 2rem;
+  padding: 1rem 10rem;
+}
+@media screen and (min-width: 768px) {
+  .button.large {
+    padding: 1rem 5rem;
+  }
 }
 .button.small {
   font-size: 0.875em;
@@ -41,11 +46,12 @@
 }
 .button.primary-color-indigo {
   background-color: #2e66e5;
+  border: solid 1px #2e66e5;
 }
 .button.primary-color-white {
   background-color: #ffffff;
   color: #13182c;
-  border: solid 2px #f7f8f9;
+  border: solid 1px #bdc5d5;
 }
 .button.secondary-color-slate {
   background-color: #5c667e;

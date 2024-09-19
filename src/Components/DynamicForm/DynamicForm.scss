@@ -7,11 +7,17 @@
   align-items: center;
   justify-content: center;
   border: 1px solid $secondary-color-cloud;
+  border-radius: 5px;
+  margin-top: 5rem;
 
   @include tablet {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @include desktop {
     width: 80%;
     margin: 0 auto;
-    margin-top: 5rem;
   }
 
   &__header-container {
@@ -21,6 +27,7 @@
     width: 100%;
     padding: 30px 0;
     border-bottom: 1px solid $secondary-color-cloud;
+    margin-bottom: 2rem;
 
     .dynamic-form__back-icon {
       margin-right: 15px;
@@ -29,7 +36,7 @@
     }
 
     h1 {
-      font-size: 1.8rem;
+      @include fontLarge;
 
       @include tablet {
         @include fontLarge;
@@ -46,19 +53,18 @@
     flex-direction: column;
     width: 100%;
     gap: 20px;
+    margin-bottom: 2rem;
 
     @include tablet {
       flex-direction: row;
       width: 100%;
-
       gap: 0;
     }
   }
 
   &__section {
-    width: 20;
     flex: 1;
-    padding: 20px;
+    padding: 5px 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -70,36 +76,41 @@
       &:last-child {
         border-right: none;
       }
+    }
 
-      &-title {
-        margin-bottom: 2.5rem;
-        text-align: left;
-      }
+    &-title {
+      margin-bottom: 1rem;
+      text-align: left;
 
-      &__group {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; // Ensure all elements in group are aligned left
-        justify-content: flex-start;
-        width: 100%; // Ensures input takes full width
-        margin-bottom: 15px;
-      }
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+      margin-bottom: 15px;
     }
   }
 
   &__button-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: $background-color-grey;
+    padding: 2rem 0;
+    width: 100%;
+    border-radius: 5px;
 
     @include tablet {
       flex-direction: row;
       justify-content: flex-end;
       width: 100%;
       padding: 2rem 0;
-      // border: solid red;
     }
   }
 }
