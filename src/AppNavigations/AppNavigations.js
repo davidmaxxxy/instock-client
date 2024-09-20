@@ -18,8 +18,6 @@ const AppNavigations = () => {
         path="/warehouses/:id/edit"
         element={<EditWarehouse handleClick={handleClick} />}
       />
-
-      {/* All Routes goes here  */}
     </Routes>
   );
 };
