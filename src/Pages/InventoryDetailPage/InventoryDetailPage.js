@@ -76,7 +76,7 @@ const InventoryDetailPage = () => {
                     STATUS:
                   </h2>
                   <p className="inventory-details__infor--container-text status">
-                    {inventory.status.toLocaleUpperCase()}
+                    {inventory.status.toUpperCase()}
                   </p>
                 </article>
                 <article className="inventory-details__infor--container">
