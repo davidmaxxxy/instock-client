@@ -1,0 +1,36 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.table-wrapper{
+&__mobile{
+    @include tablet{
+        display: none;
+    }
+}
+&__main{
+    display: none;
+@include tablet{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+}
+.table-header{
+    display: none;
+    @include tablet{
+        display: flex;
+        padding-left: 2.4rem;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        height: 6rem;
+        background-color: $background-color-grey;
+        &__cell{
+            display: flex;
+            width: 100%;
+            padding-right: 2.4rem;
+        }
+    }
+}
+}
