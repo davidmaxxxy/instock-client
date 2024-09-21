@@ -26,7 +26,7 @@
     justify-content: space-between;
     @include tablet {
       justify-content: center;
-      gap: 5rem;
+      gap: 2rem;
     }
     @include desktop {
       gap: 5rem;

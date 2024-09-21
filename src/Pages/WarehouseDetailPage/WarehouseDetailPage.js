@@ -20,7 +20,7 @@ const WarehouseDetailPage = () => {
       setLoading(true);
       try {
         const { status, data } = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}warehouses/${warehouseId}`
+          `${process.env.REACT_APP_BACKEND_URL}/warehouses/${warehouseId}`
         );
         if (status === 200) setWarehouse(data);
         setLoading(false);
