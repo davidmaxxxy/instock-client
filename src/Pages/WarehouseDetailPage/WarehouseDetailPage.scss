@@ -32,12 +32,14 @@
       gap: 5rem;
     }
     &--container {
-      
       &-header {
         font-size: 1.5rem;
         color: $secondary-color-slate;
       }
       &-text {
+        @include tablet {
+          width: 20rem;
+        }
         color: $primary-color-black;
         text-wrap: pretty;
         font-weight: 400;
@@ -66,8 +68,3 @@
 }
 
 
-.address--padding{
-// @include desktop {
-      //   padding-right: 20rem;
-      // }
-}

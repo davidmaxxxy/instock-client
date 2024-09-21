@@ -45,10 +45,7 @@ const WarehouseDetailPage = () => {
                 WAREHOUSE ADDRESS:
               </h2>
               <p className="Warehouse-details__infor--container-text">
-                {warehouse.address},
-              </p>
-              <p className="Warehouse-details__infor--container-text">
-                {warehouse.city}, {warehouse.country}
+                {warehouse.address}, {warehouse.city}, {warehouse.country}
               </p>
             </article>
 
