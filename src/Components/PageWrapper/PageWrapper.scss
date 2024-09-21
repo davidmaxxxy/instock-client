@@ -7,7 +7,7 @@
   align-items: center;
 
   &__section--container {
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
     background-color: variables.$primary-color-white;
     width: 95vw;
     top: 11rem;
@@ -16,7 +16,7 @@
 
     @include mixin.tablet {
       width: 85vw;
-      top: 12rem;
+      top: 13.5rem;
     }
 
     @include mixin.desktop {
@@ -63,6 +63,6 @@
   }
 
   &__children--container {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
 }

@@ -10,18 +10,25 @@ const Homepage = () => {
     console.log(value);
   };
   return (
-    <main className="homepage__container">
+    <section className="homepage__container">
       <section className="homepage__container--overlay">
-        <PageWrapper title={"Warehouses"} location={"Warehouses"}>
+        <PageWrapper title={"Warehouses"} location={"Warehouse-edit"}>
           <DropDown
             options={listOfWarehouse}
             handleOnValueSelect={getSelectedValue}
             isError={false}
             placeholder={"Please Select"}
           />
+            <DropDown
+            options={listOfWarehouse}
+            handleOnValueSelect={getSelectedValue}
+            isError={false}
+            placeholder={"Please Select"}
+          />
+          <p>ddd</p>
         </PageWrapper>
       </section>
-    </main>
+    </section>
   );
 };
 
