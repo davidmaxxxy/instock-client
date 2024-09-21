@@ -13,12 +13,17 @@ const DynamicFormInput = ({
     <>
       <label className="dynamic-form__label">{title}</label>
       <input
-        className={`dynamic-form__input ${isError ? "isError" : ""} `}
+        className={`dynamic-form__input ${
+          isError ? "dynamic-form__input--error" : ""
+        }`}
         type={type}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
         value={value}
       />
+      {isError && (
+        <span className="dynamic-form__error-message">{isError}</span>
+      )}
     </>
   );
 };

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import "./EditWarehouse.scss";
 import "../DynamicForm/DynamicForm.scss";
 import DynamicButton from "../DynamicButton/DynamicButton";
 import DynamicForm from "../DynamicForm/DynamicForm";
 import DynamicFormInput from "../DynamicForm/DynamicFormInput";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import PageWrapper from "../PageWrapper/PageWrapper";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const EditWarehouse = ({ handleClick }) => {
+const EditWarehouse = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     warehouse_name: "",
     address: "",
@@ -48,38 +49,43 @@ const EditWarehouse = ({ handleClick }) => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const handleCancel = () => {
+    navigate(-1);
+  };
+
   const handleChange = (name, value) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     if (validateForm()) {
       try {
         const response = await axios.put(
-          `http://localhost:3000/api/warehouses/${id}`,
+          `${process.env.REACT_APP_BACKEND_URL}warehouses/${id}`,
           formData
         );
 
         if (response.status === 200) {
           alert("Warehouse has been updated successfully");
+          const warehouseName = formData.warehouse_name;
+          navigate(`/warehouse/detail/${warehouseName}/${id}`);
         } else {
-          alert("Error updating warehouse: " + response.data.message);
+          console.log("Error updating warehouse: " + response.data.message);
         }
       } catch (err) {
         console.log(err);
         alert(
-          "Error updating warehouse" + err.response?.data?.message ||
-            err.message
+          "Error updating warehouse" +
+            (err.response?.data?.message || err.message)
         );
       }
-    } else {
-      alert("Please correct the errors in the form");
     }
   };
 
   return (
     <div>
-      <h1>Edit Warehouse Page</h1>
       <PageWrapper title="Edit Warehouse" location="Warehouse-edit">
         <div className="dynamic-form__container">
           <div className="dynamic-form__section">
@@ -160,7 +166,7 @@ const EditWarehouse = ({ handleClick }) => {
             title="Cancel"
             colorClass="primary-color-white"
             size="large"
-            onClick={handleClick}
+            onClick={handleCancel}
           />
           <DynamicButton
             title="Save"
