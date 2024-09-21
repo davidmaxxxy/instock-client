@@ -9,7 +9,6 @@ const WarehouseDetailPage = () => {
   const navigate = useNavigate();
   const [warehouse, setWarehouse] = useState({});
   const [loading, setLoading] = useState(false);
-
   const handleEditWarehouseNavigation = () => {
     // Navigate to the warehouse Edit page with the warehouse ID
     navigate(`/warehouse/${warehouseId}/edit`);
@@ -46,7 +45,10 @@ const WarehouseDetailPage = () => {
                 WAREHOUSE ADDRESS:
               </h2>
               <p className="Warehouse-details__infor--container-text">
-                {warehouse.address}
+                {warehouse.address},
+              </p>
+              <p className="Warehouse-details__infor--container-text">
+                {warehouse.city}, {warehouse.country}
               </p>
             </article>
 
@@ -57,7 +59,10 @@ const WarehouseDetailPage = () => {
                   CONTACT NAME:
                 </h2>
                 <p className="Warehouse-details__infor--container-text">
-                  {warehouse.warehouse_name}
+                  {warehouse.contact_name}
+                </p>
+                <p className="Warehouse-details__infor--container-text">
+                  {warehouse.contact_position}
                 </p>
               </article>
               <article className="Warehouse-details__infor--container">
@@ -73,10 +78,6 @@ const WarehouseDetailPage = () => {
               </article>
             </article>
             <div className="Warehouse-details__mobile--divider" />
-
-
-
-
           </section>
           {/* Warehouse Inventory Table Goes here  */}
           <section>{/* Inventory Tables goes here  */}</section>
