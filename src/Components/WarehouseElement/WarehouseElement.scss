@@ -1,0 +1,27 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.table-element-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    padding-left: 2.4rem;
+    background-color: $primary-color-white;
+
+    &__cell{
+        padding-right: 2.4rem;
+        width: 100%;
+        text-align: left;
+    }
+    &__cell-contact{
+        display: flex;
+        flex-direction: column;
+    }
+    &__btn-delete{
+        padding-right: 1.6rem;
+    }
+    @include desktop{
+        height: 9rem;
+    }
+}
