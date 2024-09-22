@@ -3,6 +3,7 @@ import "./WarehouseDetailPage.scss";
 import PageWrapper from "../../Components/PageWrapper/PageWrapper";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import DeleteComponents from "../../Components/DeleteComponents/DeleteComponents";
 
 const WarehouseDetailPage = () => {
   const { warehouseName, warehouseId } = useParams();
@@ -13,6 +14,8 @@ const WarehouseDetailPage = () => {
     // Navigate to the warehouse Edit page with the warehouse ID
     navigate(`/warehouse/${warehouseId}/edit`);
   };
+
+  const [openModal, setOpenModal] = useState(true);
 
   useEffect(() => {
     // Fetch the warehouse data from the API
@@ -89,6 +92,8 @@ const WarehouseDetailPage = () => {
           </div>
         </div>
       )}
+      {openModal && <DeleteComponents />}
+
     </PageWrapper>
   );
 };

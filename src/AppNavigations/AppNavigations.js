@@ -3,6 +3,7 @@ import Homepage from "../Pages/HomePage/Homepage";
 import DisplayComponents from "../Components/DisplayComponents/DisplayComponents";
 import WarehouseDetailPage from "../Pages/WarehouseDetailPage/WarehouseDetailPage";
 import InventoryDetailPage from "../Pages/InventoryDetailPage/InventoryDetailPage";
+import DeleteComponents from "../Components/DeleteComponents/DeleteComponents";
 
 const AppNavigations = () => {
   return (
@@ -18,6 +19,8 @@ const AppNavigations = () => {
         path="/inventory/detail/:inventoryName/:inventoryId"
         element={<InventoryDetailPage />}
       />
+
+      <Route path="/:id" element={<DeleteComponents />} />
 
       {/* All Routes goes here  */}
     </Routes>
