@@ -10,6 +10,8 @@ import AddNewInventory from "../Pages/AddNewInventory/AddNewInventory";
 import InventoryListPage from "../Pages/InventoryListPage/InventoryListPage";
 import WarehouseList from "../Pages/WarehouseListPage/WarehouseListPage";
 
+
+import AddNewWarehouse from "../Pages/AddNewWarehouse/AddNewWarehouse";
 import EditInventory from "../Pages/EditInventory/EditInventory";
 
 
@@ -39,6 +41,7 @@ const AppNavigations = () => {
         element={<InventoryListPage />}
       />
       <Route path="/warehouse/:id/edit" element={<EditWarehouse />} />
+      <Route path="/add/:warehouseId" element={<AddNewWarehouse />} />
       <Route path="/warehouse"
         element={<WarehouseList />}/>
     </Routes>

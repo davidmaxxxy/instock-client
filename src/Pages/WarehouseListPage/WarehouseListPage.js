@@ -17,6 +17,7 @@ const WarehouseList = () => {
   const [warehouse_name, setWarehouse_name] = useState("");
   const navigate = useNavigate();
 
+
   useEffect(() => {
     const fetchWarehouses = async () => {
       setLoading(true);

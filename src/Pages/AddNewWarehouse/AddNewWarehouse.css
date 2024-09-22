@@ -1,0 +1,39 @@
+.newWarehouse__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .newWarehouse__container {
+    flex-direction: row;
+  }
+}
+.newWarehouse__container__form-container {
+  padding: 1rem 0;
+  width: 100%;
+}
+.newWarehouse__container__form--input {
+  padding: 1rem;
+  border-radius: 2rem;
+  width: 90%;
+}
+
+.newWarehouse__Item-Details__container {
+  width: 100%;
+}
+
+.newWarehouse__status--container {
+  display: flex;
+  align-items: center;
+}
+
+.newWarehouse__btn--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .newWarehouse__btn--container {
+    justify-content: flex-end;
+  }
+}/*# sourceMappingURL=AddNewWarehouse.css.map */
