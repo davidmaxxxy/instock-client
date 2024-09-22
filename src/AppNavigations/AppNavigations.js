@@ -25,7 +25,6 @@ const AppNavigations = () => {
         path="/warehouse"
         element={<WarehouseListPage />}
       />
-      <Route path="/inventory/add" element={<AddNewInventory />} />
 
       <Route path="/warehouse/:id/edit" element={<EditWarehouse />} />
     </Routes>
