@@ -5,12 +5,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   &__section--container {
     border-radius: 0.5rem;
     background-color: variables.$primary-color-white;
     width: 95vw;
-    top: 11rem;
+    top: 16rem;
     position: absolute;
     z-index: 2;
 
@@ -21,6 +21,8 @@
 
     @include mixin.desktop {
       width: 70vw;
+      top: 12.5rem;
+
     }
   }
 
@@ -65,5 +67,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     background-color: #fff;
     border-radius: 0.5rem;
+    padding: 2rem;
   }
 }
