@@ -38,7 +38,9 @@ const WarehousesElementMobile = ({ warehouse }) => {
             </span>
             <nav className="mobile-element__buttons-container">
                 <img className="mobile-element__btn" src={btnDelete} alt="Delete"/>
+                <Link to={`/warehouse/${warehouse.id}/edit`}>
                 <img className="mobile-element__btn" src={btnEdit} alt="Edit"/>
+                </Link>
             </nav>
         </div>
     );

@@ -29,7 +29,11 @@ const WarehousesElement = ({ warehouse }) => {
         </tr>
         <tr className="table-element-container__cell table-element-container__cell-btn">
             <td><img className="table-element-container__btn-delete table-element-container__btn" src={btnDelete} alt="Delete"/></td>
-            <td><img className="table-element-container__btn" src={btnEdit} alt="Edit"/></td>
+            <td>
+              <Link to={`/warehouse/${warehouse.id}/edit`}>
+            <img className="table-element-container__btn" src={btnEdit} alt="Edit"/>
+            </Link>
+            </td>
         </tr>
       </tbody>
       

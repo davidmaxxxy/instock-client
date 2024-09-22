@@ -22,7 +22,7 @@ const AppNavigations = () => {
         element={<WarehouseDetailPage />}
       />
       <Route
-        path="/warehouses"
+        path="/warehouse"
         element={<WarehouseListPage />}
       />
 
