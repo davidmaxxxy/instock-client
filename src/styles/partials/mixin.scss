@@ -14,17 +14,6 @@
   }
 }
 
-@mixin fontLarge {
-  font-size: 3rem;
-  line-height: 2rem;
-  font-weight: 700;
-
-  @include tablet {
-    font-size: 3rem;
-    line-height: 2.2rem;
-    font-weight: 700;
-  }
-}
 
 // Font mixin for medium-sized text
 @mixin fontMedium {

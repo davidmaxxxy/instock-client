@@ -4,14 +4,12 @@
 .dynamic-form {
   &__label {
     font-size: 2rem;
-    font-weight: bold;
     text-align: left;
     width: 90%;
     margin-bottom: 0.2rem;
 
     @include tablet {
       font-size: 1.5rem;
-      font-weight: bold;
       text-align: left;
       width: 90%;
       margin-bottom: 0.3rem;

@@ -21,7 +21,7 @@ const AppNavigations = () => {
         element={<InventoryDetailPage />}
       />
 
-      <Route path="/warehouses/:id/edit" element={<EditWarehouse />} />
+      <Route path="/warehouse/:id/edit" element={<EditWarehouse />} />
     </Routes>
   );
 };
