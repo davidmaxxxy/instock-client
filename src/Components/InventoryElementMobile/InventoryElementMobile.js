@@ -17,7 +17,7 @@ const InventoryElementMobile = ({ inventory }) => {
             <div className="inventory-contact-name-wrapper">
                 <span className="inventory-contact-name-wrapper__inventory-container">
                     <h4 className="inventory-mobile-element__heading">INVENTORY ITEM</h4>
-                    <Link className="table-element-container__row-link" to={`/`}>
+                    <Link className="table-element-container__row-link" to={`/inventory/detail/${inventory.item_name}/${inventory.id}`}>
                     <p className="inventory-contact-name-wrapper__inventory-name inventory-mobile-element__text">
                         {inventory.item_name}
                         <img className="inventory-contact-name-wrapper__inventory-name-link"  src={chevron} alt='&gt;' />
@@ -48,7 +48,7 @@ const InventoryElementMobile = ({ inventory }) => {
             </span>
             <nav className="inventory-mobile-element__buttons-container">
                 <img className="inventory-mobile-element__btn" src={btnDelete} alt="Delete"/>
-                <Link to={`/`}>
+                <Link to={`/edit/inventory/${inventory.warehouse_id}`}>
                 <img className="inventory-mobile-element__btn" src={btnEdit} alt="Edit"/>
                 </Link>
             </nav>

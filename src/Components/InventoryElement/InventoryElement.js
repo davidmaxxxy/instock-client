@@ -18,7 +18,7 @@ const InventoryElement = ({ inventory }) => {
         <td className="inventory-table-element-container__row">
           <Link
             className="inventory-table-element-container__row-link"
-            to={`/`}
+            to={`/inventory/detail/${inventory.item_name}/${inventory.id}`}
           >
             <h3>{inventory.item_name}</h3>
             <img
@@ -62,7 +62,7 @@ const InventoryElement = ({ inventory }) => {
           />
         </td>
         <td>
-          <Link to={`/`}>
+          <Link to={`/edit/inventory/${inventory.warehouse_id}`}>
             <img
               className="inventory-table-element-container__btn"
               src={btnEdit}
