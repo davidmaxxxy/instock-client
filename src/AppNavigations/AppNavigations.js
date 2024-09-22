@@ -12,30 +12,19 @@ import WarehouseList from "../Pages/WarehouseListPage/WarehouseListPage";
 const AppNavigations = () => {
   return (
     <Routes>
+      <Route path="/" element={<Homepage />} />
       {/* to display  components  */}
       <Route path="/components" element={<DisplayComponents />} />
-      <Route
-        path="/inventory/detail/:inventoryName/:inventoryId"
-        element={<InventoryDetailPage />}
-      />
       <Route
         path="/warehouse/detail/:warehouseName/:warehouseId"
         element={<WarehouseDetailPage />}
       />
-      <Route path="/" element={<WarehouseListPage />} />
-      <Route path="/add/inventory/:warehouseId" element={<AddNewInventory />} />
-      <Route path="/edit/inventory/:warehouseId" element={<EditInventory />} />
       <Route
         path="/inventory/detail/:inventoryName/:inventoryId"
         element={<InventoryDetailPage />}
       />
-      <Route
-        path="/inventory"
-        element={<InventoryListPage />}
-      />
-      <Route path="/warehouse/:id/edit" element={<EditWarehouse />} />
-      <Route path="/warehouse"
-        element={<WarehouseList />}/>
+
+      <Route path="/warehouses/:id/edit" element={<EditWarehouse />} />
     </Routes>
   );
 };
