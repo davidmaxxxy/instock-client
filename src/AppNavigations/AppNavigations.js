@@ -1,8 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import Homepage from "../Pages/HomePage/Homepage";
 import DisplayComponents from "../Components/DisplayComponents/DisplayComponents";
+import EditWarehouse from "../Components/EditWarehouse/EditWarehouse";
 import WarehouseDetailPage from "../Pages/WarehouseDetailPage/WarehouseDetailPage";
 import InventoryDetailPage from "../Pages/InventoryDetailPage/InventoryDetailPage";
+
 
 const AppNavigations = () => {
   return (
@@ -19,7 +21,7 @@ const AppNavigations = () => {
         element={<InventoryDetailPage />}
       />
 
-      {/* All Routes goes here  */}
+      <Route path="/warehouse/:id/edit" element={<EditWarehouse />} />
     </Routes>
   );
 };
