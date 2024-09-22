@@ -65,10 +65,14 @@
 
   &__section {
     flex: 1;
-    padding: 5px 50px;
+    padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    &:first-child {
+      border-bottom: 1px solid $secondary-color-cloud; // Add bottom border to the first section
+    }
 
     @include tablet {
       padding: 30px;
@@ -106,6 +110,7 @@
     padding: 2rem 0;
     width: 100%;
     border-radius: 5px;
+    // border: solid red;
 
     @include tablet {
       flex-direction: row;
