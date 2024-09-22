@@ -12,10 +12,6 @@ const AppNavigations = () => {
       {/* to display  components  */}
       <Route path="/components" element={<DisplayComponents />} />
       <Route
-        path="/warehouse/detail/:warehouseName/:warehouseId"
-        element={<WarehouseDetailPage />}
-      />
-      <Route
         path="/inventory/detail/:inventoryName/:inventoryId"
         element={<InventoryDetailPage />}
       />
