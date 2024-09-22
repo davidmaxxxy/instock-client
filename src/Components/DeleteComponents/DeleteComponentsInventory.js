@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import DynamicButton from "../DynamicButton/DynamicButton";
-import "./DeleteComponents.scss";
+import "./DeleteComponentsInventory.scss";
 
-const DeleteComponents = ({ id, warehouseName, setModal }) => {
+const DeleteComponentsInventory = ({ id, inventoryName, setModal }) => {
   const handleModalClose = () => {
     setModal(false);
   };
@@ -17,17 +17,17 @@ const DeleteComponents = ({ id, warehouseName, setModal }) => {
   // Inventory-edit-form ===  edit single Inventory form page
   // New-Inventory === Add New Inventory form page
 
-  const deleteWarehouseItem = async (id) => {
+  const deleteInventoryItem = async (id) => {
     try {
       const response = await fetch(`/${id}`, {
         method: "delete",
       });
       if (response.status === 204) {
-        console.log("Warehouse item deleted succesfully");
+        console.log("Inventory item deleted succesfully");
       } else if (response.status === 404) {
-        console.log("Warehouse item not found");
+        console.log("Inventory item not found");
       } else {
-        console.log("Failed to delete Warehouse item");
+        console.log("Failed to delete Inventory item");
       }
     } catch (error) {
       console.log("Error");
@@ -40,12 +40,12 @@ const DeleteComponents = ({ id, warehouseName, setModal }) => {
         <div>
           <h1>
             Delete
-            {warehouseName}
+            {inventoryName}
             warehouse?
           </h1>
 
           <p>
-            Please confirm that you'd like to delete the {warehouseName} from
+            Please confirm that you'd like to delete the {inventoryName} from
             the list of warehouses. You won't be able to undo this action.
           </p>
 
@@ -60,7 +60,7 @@ const DeleteComponents = ({ id, warehouseName, setModal }) => {
             title="Delete"
             colorClass="supporting-color-red"
             size="small"
-            onClick={deleteWarehouseItem(id)}
+            onClick={deleteInventoryItem(id)}
           />
         </div>
       </section>
@@ -68,4 +68,4 @@ const DeleteComponents = ({ id, warehouseName, setModal }) => {
   );
 };
 
-export default DeleteComponents;
+export default DeleteComponentsInventory;
