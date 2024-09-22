@@ -71,12 +71,16 @@
     align-items: flex-start;
 
     &:first-child {
-      border-bottom: 1px solid $secondary-color-cloud; // Add bottom border to the first section
+      border-bottom: 1px solid $secondary-color-cloud;
     }
 
     @include tablet {
       padding: 30px;
       border-right: 1px solid $secondary-color-cloud;
+
+      &:first-child {
+        border-bottom: none;
+      }
 
       &:last-child {
         border-right: none;
@@ -110,7 +114,6 @@
     padding: 2rem 0;
     width: 100%;
     border-radius: 5px;
-    // border: solid red;
 
     @include tablet {
       flex-direction: row;

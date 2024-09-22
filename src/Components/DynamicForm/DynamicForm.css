@@ -92,6 +92,9 @@
     padding: 30px;
     border-right: 1px solid #bdc5d5;
   }
+  .dynamic-form__section:first-child {
+    border-bottom: none;
+  }
   .dynamic-form__section:last-child {
     border-right: none;
   }
