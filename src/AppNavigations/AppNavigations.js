@@ -5,6 +5,7 @@ import EditWarehouse from "../Components/EditWarehouse/EditWarehouse";
 import WarehouseDetailPage from "../Pages/WarehouseDetailPage/WarehouseDetailPage";
 import InventoryDetailPage from "../Pages/InventoryDetailPage/InventoryDetailPage";
 import WarehouseListPage from "../Pages/WarehouseListPage/WarehouseListPage"
+import InventoryTable from "../Components/InventoryTable/InventoryTable";
 
 
 const AppNavigations = () => {
@@ -24,6 +25,10 @@ const AppNavigations = () => {
       <Route
         path="/warehouse"
         element={<WarehouseListPage />}
+      />
+      <Route
+        path="/inventory"
+        element={<InventoryTable />}
       />
 
       <Route path="/warehouse/:id/edit" element={<EditWarehouse />} />
