@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import DynamicButton from "../DynamicButton/DynamicButton";
 
-const listOfWarehouse = ["Warehouse 1", "Warehouse 2"];
-
-const DeleteComponents = ({id, warehouseName}) => {
-  const handleButtonClick = () => {
-    console.log("Button clicked");
+const DeleteComponents = ({id, warehouseName, setModal}) => {
+  const handleModalClose = () => {
+    setModal(false);
   };
 
   //Strings to pass in to PageWrapper location prop  based Page
@@ -53,7 +51,7 @@ const DeleteComponents = ({id, warehouseName}) => {
             title="Cancel"
             colorClass="primary-color-white"
             size="small"
-            onClick={handleButtonClick}
+            onClick={handleModalClose}
           />
 
           <DynamicButton
