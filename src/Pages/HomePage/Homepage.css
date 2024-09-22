@@ -1,0 +1,7 @@
+.homepage__container {
+  width: 100vw;
+  height: 50vh;
+  display: flex; /* Allow the homepage to float over the navbar */
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=Homepage.css.map */
