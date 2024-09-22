@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./EditInventory.scss";
 import PageWrapper from "../../Components/PageWrapper/PageWrapper";
@@ -8,11 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useParams } from "react-router-dom";
 
-const listOfWarehouse = ["Warehouse 1", "Warehouse 2"];
+const listOfWarehouse = ["category", "category 2"];
 
 const EditInventory = () => {
   const { warehouseId } = useParams();
   const navigate = useNavigate();
+  const [warehouses, setWarehouses] = useState([]);
   const [status, setStatus] = useState("In stock");
   const [formData, setFormData] = useState({
     item_name: "",
@@ -41,6 +42,24 @@ const EditInventory = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+
+
+  useEffect(() => {
+    const fetchWarehouses = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/warehouses`
+        );
+        setWarehouses(response.data);
+      } catch (error) {
+        console.error("Error fetching warehouses");
+      }
+    };
+
+    fetchWarehouses();
+  }, []);
+
+
   const handleChange = (name, value) => {
     setFormData({ ...formData, [name]: value });
   };
@@ -56,7 +75,7 @@ const EditInventory = () => {
           status: warehouseStatus,
           quantity,
         } = formData;
-        const { status: resStatus } = await axios.post(
+        const { status: resStatus } = await axios.put(
           `${process.env.REACT_APP_BACKEND_URL}/inventories`,
           {
             warehouse_id: warehouseId,
@@ -79,8 +98,8 @@ const EditInventory = () => {
 
   return (
     <PageWrapper
-      title={"Add New Inventory Item"}
-      location={"New-Inventory"}
+      title={"Edit Inventory Item"}
+      location={"Inventory-edit-form"}
       handleBackNavigation={() => navigate(-1)}
     >
       <form onSubmit={handleSubmit}>
@@ -190,7 +209,9 @@ const EditInventory = () => {
                 Warehouse
               </p>
               <DropDown
-                options={listOfWarehouse}
+                options={warehouses.map(
+                    (warehouse) => warehouse.warehouse_name
+                  )}
                 handleOnValueSelect={(value) =>
                   handleChange("warehouse_name", value)
                 }
