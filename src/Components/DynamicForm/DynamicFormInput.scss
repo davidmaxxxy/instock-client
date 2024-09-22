@@ -1,0 +1,55 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.dynamic-form {
+  &__label {
+    font-size: 2rem;
+    text-align: left;
+    width: 90%;
+    margin-bottom: 0.2rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      text-align: left;
+      width: 90%;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid $secondary-color-cloud;
+    border-radius: 20px;
+    width: 90%;
+    text-align: left;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+      font-size: 1.2rem;
+      padding: 10px;
+      border: 1px solid $secondary-color-cloud;
+      border-radius: 20px;
+      width: 90%;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    &::placeholder {
+      font-size: 1.5rem;
+      color: $secondary-color-slate;
+    }
+
+    &--error {
+      border-color: red;
+      background-color: #ffe6e6;
+    }
+  }
+
+  &__error-message {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: -1rem; // Adjust spacing to move it closer to the input
+    margin-bottom: 1.5rem;
+  }
+}
