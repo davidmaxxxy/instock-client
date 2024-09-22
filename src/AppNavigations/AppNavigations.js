@@ -9,7 +9,9 @@ import AddNewInventory from "../Pages/AddNewInventory/AddNewInventory";
 
 import InventoryListPage from "../Pages/InventoryListPage/InventoryListPage";
 import WarehouseList from "../Pages/WarehouseListPage/WarehouseListPage";
+
 import EditInventory from "../Pages/EditInventory/EditInventory";
+
 
 
 const AppNavigations = () => {

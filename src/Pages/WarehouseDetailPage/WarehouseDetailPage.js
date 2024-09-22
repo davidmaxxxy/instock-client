@@ -4,6 +4,7 @@ import PageWrapper from "../../Components/PageWrapper/PageWrapper";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
+
 const WarehouseDetailPage = () => {
   const { warehouseName, warehouseId } = useParams();
   const navigate = useNavigate();
@@ -14,6 +15,8 @@ const WarehouseDetailPage = () => {
     // Navigate to the warehouse Edit page with the warehouse ID
     navigate(`/warehouse/${warehouseId}/edit`);
   };
+
+  
 
   useEffect(() => {
     // Fetch the warehouse data from the API
@@ -90,6 +93,8 @@ const WarehouseDetailPage = () => {
           </div>
         </div>
       )}
+   
+
     </PageWrapper>
   );
 };
