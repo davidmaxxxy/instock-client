@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AddNewInventory.scss";
 import PageWrapper from "../../Components/PageWrapper/PageWrapper";
@@ -8,11 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useParams } from "react-router-dom";
 
-const listOfWarehouse = ["Warehouse 1", "Warehouse 2"];
+const listOfWarehouse = ["category", "category 2"];
 
 const AddNewInventory = () => {
   const { warehouseId } = useParams();
   const navigate = useNavigate();
+  const [warehouses, setWarehouses] = useState([]);
   const [status, setStatus] = useState("In stock");
   const [formData, setFormData] = useState({
     item_name: "",
@@ -22,9 +23,22 @@ const AddNewInventory = () => {
     quantity: 0,
     warehouse_name: "",
   });
-
-
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    const fetchWarehouses = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/warehouses`
+        );
+        setWarehouses(response.data);
+      } catch (error) {
+        console.error("Error fetching warehouses");
+      }
+    };
+
+    fetchWarehouses();
+  }, []);
 
   const validateForm = () => {
     let newErrors = {};
@@ -190,7 +204,9 @@ const AddNewInventory = () => {
                 Warehouse
               </p>
               <DropDown
-                options={listOfWarehouse}
+                options={warehouses.map(
+                  (warehouse) => warehouse.warehouse_name
+                )}
                 handleOnValueSelect={(value) =>
                   handleChange("warehouse_name", value)
                 }
