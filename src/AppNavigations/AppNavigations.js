@@ -6,6 +6,7 @@ import WarehouseDetailPage from "../Pages/WarehouseDetailPage/WarehouseDetailPag
 import InventoryDetailPage from "../Pages/InventoryDetailPage/InventoryDetailPage";
 import WarehouseListPage from "../Pages/WarehouseListPage/WarehouseListPage";
 import AddNewInventory from "../Pages/AddNewInventory/AddNewInventory";
+import EditInventory from "../Pages/EditInventory/EditInventory";
 
 const AppNavigations = () => {
   return (
@@ -22,6 +23,7 @@ const AppNavigations = () => {
       />
       <Route path="/" element={<WarehouseListPage />} />
       <Route path="/add/inventory/:warehouseId" element={<AddNewInventory />} />
+      <Route path="/edit/inventory/:warehouseId" element={<EditInventory />} />
 
       <Route path="/warehouse/:id/edit" element={<EditWarehouse />} />
     </Routes>
