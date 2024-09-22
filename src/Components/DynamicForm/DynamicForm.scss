@@ -1,0 +1,116 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.dynamic-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $secondary-color-cloud;
+  border-radius: 5px;
+  margin-top: 5rem;
+  border: solid red;
+
+  @include tablet {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @include desktop {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: 1px solid $secondary-color-cloud;
+    margin-bottom: 2rem;
+
+    .dynamic-form__back-icon {
+      margin-right: 15px;
+      margin-left: 30px;
+      color: $primary-color-indigo;
+    }
+
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      flex-direction: row;
+      width: 100%;
+      gap: 0;
+    }
+  }
+
+  &__section {
+    flex: 1;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:first-child {
+      border-bottom: 1px solid $secondary-color-cloud;
+    }
+
+    @include tablet {
+      padding: 30px;
+      border-right: 1px solid $secondary-color-cloud;
+
+      &:first-child {
+        border-bottom: none;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    &-title {
+      margin-bottom: 1rem;
+      text-align: left;
+      font-size: 3rem;
+    }
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: $background-color-grey;
+    padding: 2rem 0;
+    width: 100%;
+    border-radius: 5px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 100%;
+      padding: 2rem 0;
+    }
+  }
+}

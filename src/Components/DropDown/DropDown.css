@@ -1,0 +1,37 @@
+.select__container {
+  margin: 0 0.5rem;
+  width: 100%;
+  min-width: 10rem;
+}
+.select__container select {
+  padding: 1.2rem;
+  border-radius: 20px;
+  width: 100%;
+  border: 0.1rem solid #bdc5d5;
+  background-size: 1rem;
+}
+.select__container select:focus, .select__container select:active {
+  border: 0.1rem solid #2e66e5;
+}
+.select__container select.isError {
+  border: 0.1rem solid #c94515;
+}
+.select__container select::-moz-placeholder {
+  color: #5c667e;
+  font-size: 1.5rem;
+}
+.select__container select::placeholder {
+  color: #5c667e;
+  font-size: 1.5rem;
+}
+
+.error_text-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+}
+.error_text-container__text {
+  color: #c94515;
+  font-size: medium;
+}/*# sourceMappingURL=DropDown.css.map */
