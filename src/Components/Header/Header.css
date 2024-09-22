@@ -2,6 +2,7 @@
   background-color: #232940;
   display: flex;
   justify-content: center;
+  height: 15rem;
 }
 
 .header-nav {
@@ -12,13 +13,13 @@
 @media screen and (min-width: 768px) {
   .header-nav {
     flex-direction: row;
-    padding-top: 3.2rem;
+    padding-top: 2rem;
     padding-bottom: 3.2rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .header-nav {
-    padding-top: 4rem;
+    padding-top: 1rem;
     padding-bottom: 4rem;
     max-width: 102rem;
     width: 100%;

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import DynamicButton from "../DynamicButton/DynamicButton";
 import DynamicFormInput from "../DynamicForm/DynamicFormInput";
+import EditWarehouse from "../EditWarehouse/EditWarehouse";
 
 const listOfWarehouse = ["Warehouse 1", "Warehouse 2"];
 
@@ -39,6 +40,7 @@ const DisplayComponents = () => {
   return (
     <div>
       {/* Import this component and write your code in between them  check HomePage for more example  */}
+
       <PageWrapper title={"Warehouse"} location={"Warehouses"}>
         {/* <DynamicForm handleButtonClick={handleButtonClick} /> */}
         <DynamicFormInput
@@ -56,7 +58,6 @@ const DisplayComponents = () => {
           width={500}
         />
 
-        
         <h2>Test Dynamic Buttons</h2>
 
         <DynamicButton
@@ -94,6 +95,8 @@ const DisplayComponents = () => {
           size="small"
           onClick={handleButtonClick}
         />
+
+        <EditWarehouse />
       </PageWrapper>
     </div>
   );

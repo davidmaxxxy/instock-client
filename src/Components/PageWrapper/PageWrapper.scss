@@ -32,7 +32,6 @@
     border-bottom: 1px solid variables.$secondary-color-slate;
     padding: 3.5rem 2rem 2rem 2rem;
 
-    
     @include mixin.tablet {
       justify-content: space-between;
       flex-direction: row;
@@ -53,7 +52,6 @@
     }
   }
 
-
   &__header--title-container {
     display: flex;
     justify-content: left;
@@ -63,6 +61,9 @@
   }
 
   &__children--container {
-    padding: 2rem 1rem;
+    border: 1px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    border-radius: 0.5rem;
   }
 }

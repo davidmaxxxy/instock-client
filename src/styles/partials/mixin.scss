@@ -12,17 +12,19 @@
     }
   }
 
-  @mixin fontMedium{
-    font-size: 1.3rem;
-    line-height: 2rem;
+
+// Font mixin for medium-sized text
+@mixin fontMedium {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
     font-weight: 400;
-  
-    @include tablet {
-      font-size: 1.4rem;
-      line-height: 2.2rem;
-      font-weight: 400;
-    }
   }
+}
 
   @mixin fontSmall{
     font-size: 1.1rem;
