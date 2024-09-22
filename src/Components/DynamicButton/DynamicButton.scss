@@ -1,0 +1,89 @@
+@import "../../styles/partials/variables.scss";
+
+//
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 1.5rem;
+
+  width: auto;
+  min-width: 100px;
+
+  font-size: 1em;
+  text-align: center;
+  &-title {
+    font-size: 1.5rem;
+  }
+
+  &.large {
+    font-size: 1.25em;
+  }
+
+  &.small {
+    font-size: 0.875em;
+  }
+
+  &.medium {
+    font-size: 1em;
+  }
+  &-icon {
+    width: 0.5rem;
+  }
+  &.with-icon {
+    svg {
+      margin-right: 8px;
+      font-size: 1.2em;
+    }
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  // Color classes
+  &.primary-color-black {
+    background-color: $primary-color-black;
+  }
+
+  &.primary-color-indigo {
+    background-color: $primary-color-indigo;
+  }
+
+  &.primary-color-white {
+    background-color: $primary-color-white;
+    color: $primary-color-black;
+    border: solid 2px $background-color-grey;
+  }
+
+  &.secondary-color-slate {
+    background-color: $secondary-color-slate;
+  }
+
+  &.secondary-color-cloud {
+    background-color: $secondary-color-cloud;
+    color: $primary-color-black;
+  }
+
+  &.background-color-graphite {
+    background-color: $background-color-graphite;
+  }
+
+  &.background-color-grey {
+    background-color: $background-color-grey;
+    color: $primary-color-black;
+  }
+
+  &.supporting-color-green {
+    background-color: $supporting-color-green;
+  }
+
+  &.supporting-color-red {
+    background-color: $supporting-color-red;
+  }
+}

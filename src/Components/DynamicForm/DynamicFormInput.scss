@@ -1,0 +1,26 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.dynamic-form {
+  &__input {
+    @include tablet {
+      padding-right: 2rem;
+    }
+    padding: 1rem;
+    width: auto;
+    border: 1px solid $secondary-color-cloud;
+    border-radius: 2rem;
+    transition: border-color 0.3s ease;
+    @include fontSmall;
+    &.isError {
+      border: 0.1rem solid $supporting-color-red;
+    }
+    &:focus {
+      border-color: $primary-color-indigo;
+      outline: none;
+    }
+    &::placeholder {
+      font-size: 1.6rem;
+    }
+  }
+}
