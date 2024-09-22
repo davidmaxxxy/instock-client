@@ -28,6 +28,7 @@ const WarehousesElement = ({ warehouse }) => {
           <td className="table-element-container__row">{warehouse.contact_email}</td>
         </tr>
         <tr className="table-element-container__cell table-element-container__cell-btn">
+          {/* Delete function link goes here */}
             <td><img className="table-element-container__btn-delete table-element-container__btn" src={btnDelete} alt="Delete"/></td>
             <td>
               <Link to={`/warehouse/${warehouse.id}/edit`}>
