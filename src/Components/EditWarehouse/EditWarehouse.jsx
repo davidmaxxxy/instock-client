@@ -63,12 +63,11 @@ const EditWarehouse = () => {
     if (validateForm()) {
       try {
         const response = await axios.put(
-          `${process.env.REACT_APP_BACKEND_URL}warehouses/${id}`,
+          `${process.env.REACT_APP_BACKEND_URL}/warehouses/${id}`,
           formData
         );
 
         if (response.status === 200) {
-          alert("Warehouse has been updated successfully");
           const warehouseName = formData.warehouse_name;
           navigate(`/warehouse/detail/${warehouseName}/${id}`);
         } else {
@@ -76,10 +75,6 @@ const EditWarehouse = () => {
         }
       } catch (err) {
         console.log(err);
-        alert(
-          "Error updating warehouse" +
-            (err.response?.data?.message || err.message)
-        );
       }
     }
   };
