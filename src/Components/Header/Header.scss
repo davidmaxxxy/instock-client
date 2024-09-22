@@ -5,7 +5,8 @@
   background-color: $background-color-graphite;
   display: flex;
   justify-content: center;
-  height: 23rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
 }
 
 .header-nav {
@@ -14,13 +15,14 @@
   align-items: center;
   width: 100%;
 
+  width: 100%;
   @include tablet {
     flex-direction: row;
-    padding-top: 2rem;
+    padding-top: 3.2rem;
     padding-bottom: 3.2rem;
   }
   @include desktop {
-    padding-top: 1rem;
+    padding-top: 4rem;
     padding-bottom: 4rem;
     max-width: 102rem;
     width: 100%;
@@ -46,15 +48,19 @@
   width: 100%;
   padding-top: 2.4rem;
   padding-bottom: 2.4rem;
-  &__warehouses-btn {
-    padding-left: 1.6rem;
-    width: 50%;
-    padding-right: 0.8rem;
+  &__btn{
+    width: 16.4rem;
+    height: 3.6rem;
+    background-color: $background-color-graphite;
+    color: $primary-color-white;
+    border-width: 0;
+    border-radius: 2rem;
+    &.active {
+      background-color: $primary-color-black;
+    }
   }
-  &__inventory-btn {
-    padding-right: 1.6rem;
-    width: 50%;
-    padding-left: 0.8rem;
+  &__btn:hover{
+    text-decoration: underline;
   }
   @include tablet {
     padding-top: 0;
