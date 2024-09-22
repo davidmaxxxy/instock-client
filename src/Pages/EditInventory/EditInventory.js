@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./AddNewInventory.scss";
+import "./EditInventory.scss";
 import PageWrapper from "../../Components/PageWrapper/PageWrapper";
 import DropDown from "../../Components/DropDown/DropDown";
 import DynamicButton from "../../Components/DynamicButton/DynamicButton";
@@ -10,7 +10,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const listOfWarehouse = ["category", "category 2"];
 
-const AddNewInventory = () => {
+const EditInventory = () => {
   const { warehouseId } = useParams();
   const navigate = useNavigate();
   const [warehouses, setWarehouses] = useState([]);
@@ -23,22 +23,9 @@ const AddNewInventory = () => {
     quantity: 0,
     warehouse_name: "",
   });
+
+
   const [errors, setErrors] = useState({});
-
-  useEffect(() => {
-    const fetchWarehouses = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}/warehouses`
-        );
-        setWarehouses(response.data);
-      } catch (error) {
-        console.error("Error fetching warehouses");
-      }
-    };
-
-    fetchWarehouses();
-  }, []);
 
   const validateForm = () => {
     let newErrors = {};
@@ -55,6 +42,24 @@ const AddNewInventory = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+
+
+  useEffect(() => {
+    const fetchWarehouses = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/warehouses`
+        );
+        setWarehouses(response.data);
+      } catch (error) {
+        console.error("Error fetching warehouses");
+      }
+    };
+
+    fetchWarehouses();
+  }, []);
+
+
   const handleChange = (name, value) => {
     setFormData({ ...formData, [name]: value });
   };
@@ -70,7 +75,7 @@ const AddNewInventory = () => {
           status: warehouseStatus,
           quantity,
         } = formData;
-        const { status: resStatus } = await axios.post(
+        const { status: resStatus } = await axios.put(
           `${process.env.REACT_APP_BACKEND_URL}/inventories`,
           {
             warehouse_id: warehouseId,
@@ -93,8 +98,8 @@ const AddNewInventory = () => {
 
   return (
     <PageWrapper
-      title={"Add New Inventory Item"}
-      location={"New-Inventory"}
+      title={"Edit Inventory Item"}
+      location={"Inventory-edit-form"}
       handleBackNavigation={() => navigate(-1)}
     >
       <form onSubmit={handleSubmit}>
@@ -205,8 +210,8 @@ const AddNewInventory = () => {
               </p>
               <DropDown
                 options={warehouses.map(
-                  (warehouse) => warehouse.warehouse_name
-                )}
+                    (warehouse) => warehouse.warehouse_name
+                  )}
                 handleOnValueSelect={(value) =>
                   handleChange("warehouse_name", value)
                 }
@@ -240,4 +245,5 @@ const AddNewInventory = () => {
   );
 };
 
-export default AddNewInventory;
+
+export default EditInventory
