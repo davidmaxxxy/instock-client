@@ -1,0 +1,75 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 1.5rem;
+  margin-right: 2rem;
+  width: auto;
+  min-width: 100px;
+  font-size: 1em;
+  text-align: center;
+}
+.button-title {
+  font-size: 1.5rem;
+}
+.button.large {
+  font-size: 2rem;
+  padding: 1.2rem 8rem;
+}
+@media screen and (min-width: 768px) {
+  .button.large {
+    padding: 1rem 5rem;
+  }
+}
+.button.small {
+  font-size: 0.875em;
+}
+.button.medium {
+  font-size: 1em;
+}
+.button-icon {
+  width: 0.5rem;
+}
+.button.with-icon svg {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+.button:hover {
+  opacity: 0.9;
+}
+.button.primary-color-black {
+  background-color: #13182c;
+}
+.button.primary-color-indigo {
+  background-color: #2e66e5;
+  border: solid 1px #2e66e5;
+}
+.button.primary-color-white {
+  background-color: #ffffff;
+  color: #13182c;
+  border: solid 1px #bdc5d5;
+}
+.button.secondary-color-slate {
+  background-color: #5c667e;
+}
+.button.secondary-color-cloud {
+  background-color: #bdc5d5;
+  color: #13182c;
+}
+.button.background-color-graphite {
+  background-color: #232940;
+}
+.button.background-color-grey {
+  background-color: #f7f8f9;
+  color: #13182c;
+}
+.button.supporting-color-green {
+  background-color: #158463;
+}
+.button.supporting-color-red {
+  background-color: #c94515;
+}/*# sourceMappingURL=DynamicButton.css.map */

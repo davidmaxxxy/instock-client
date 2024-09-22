@@ -1,0 +1,55 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.table-wrapper{
+&__mobile{
+    @include tablet{
+        display: none;
+    }
+}
+&__main{
+    display: none;
+@include tablet{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+}
+.table-header{
+    display: none;
+    @include tablet{
+        display: flex;
+        padding-left: 2.4rem;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        height: 4rem;
+        background-color: $background-color-grey;
+        &__cell{
+            display: flex;
+            width: 100%;
+            padding-right: 2.4rem;
+            width: 20%;
+        }
+        &__cell-actions{
+            justify-content: center;
+            text-align: center;
+            width: 10%;
+        }
+        &__cell-address{
+            width: 30%;
+        }
+        &__element{
+            display: flex;
+            align-items: center;
+            color: $secondary-color-slate;
+        }
+        &__btn-sort{
+            width: 1.6rem;
+            height: 1.6rem;
+            padding-left: 0.5rem;
+        }
+    }
+}
+}
