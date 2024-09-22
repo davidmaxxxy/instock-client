@@ -10,6 +10,10 @@
     padding-right: 3.2rem;
         background-color: $background-color-graphite;
      }
+     @include desktop{
+        display: flex;
+        justify-content: center;
+     }
 }
 
 .main-heading-container{
@@ -28,6 +32,10 @@
     justify-content: space-between;
     padding-bottom: 2.4rem;
    }
+   @include desktop{
+    width: 102rem;
+ }
+
 }
 .main-heading-nav{
     display: flex;

@@ -34,9 +34,6 @@ const WarehousesTable = () => {
             <th className="table-header__element">actions</th>
           </tr>
         </thead>
-        <WarehousesElement/>
-        <WarehousesElement/>
-      
       </table>
         </div>
     );

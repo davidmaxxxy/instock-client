@@ -27,10 +27,17 @@
         text-align: left;
         @include fontMedium
     }
+    &__btn:hover{
+        transform: scale(1.1);
+    }
 }
 .warehouse-contact-name-wrapper{
     display: flex;
     flex-direction: column;
+    &__warehouse-name{
+        display: flex;
+        align-items: center;
+    }
 }
 .address-contact-info-wrapper{
     display: flex;
