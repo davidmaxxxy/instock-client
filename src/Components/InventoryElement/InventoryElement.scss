@@ -1,0 +1,69 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.inventory-table-element-container{
+    display: flex;
+    align-items: center;
+    height: 10rem;
+    padding-left: 2.4rem;
+    background-color: $primary-color-white;
+    border-bottom: 0.1rem solid $secondary-color-cloud;
+
+    &__cell{
+        padding-right: 2.4rem;
+        width: 20%;
+        text-align: left;
+    }
+    &__cell-qty{
+        width: 10%;
+    }
+    &__row{
+        border-radius: 2rem;
+        &__red{
+            background-color: #C9451512;
+            color: $supporting-color-red;
+            text-transform: uppercase;
+            text-align: center;
+            width: 9.2rem;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+        &__green{
+            background-color: #15846312;
+            color: $supporting-color-green;
+            text-transform: uppercase;
+            text-align: center;
+            width: 6.5rem;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+    }
+    &__cell-btn{
+        width: 10%;
+        display: flex;
+        justify-content: center;
+    }
+    &__cell{
+        @include fontMedium;
+    }
+    &__btn-delete{
+        padding-right: 1.6rem;
+    }
+    &__row-link{
+        display: flex;
+        align-items: center;
+        color: $primary-color-indigo;
+    }
+    &__row-link:hover{
+        text-decoration: underline;
+    }
+    @include desktop{
+        height: 9rem;
+    }
+    &__btn:hover{
+        transform: scale(1.1);
+    }
+}
+.inventory-table-element-container:hover{
+    background-color: $hover-color-blue;
+}

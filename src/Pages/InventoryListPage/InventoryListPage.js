@@ -5,6 +5,7 @@ import InventoryTable from "../../Components/InventoryTable/InventoryTable";
 import axios from 'axios';
 import { useEffect, useState } from "react";
 import DeleteComponentsInventory from "../../Components/DeleteComponents/DeleteComponentsInventory";
+import { useNavigate } from "react-router-dom";
 
 const InventoryListPage = () => {
     const [inventory, setInventory] = useState([]);
@@ -12,6 +13,7 @@ const InventoryListPage = () => {
     const [openModal, setOpenModal] = useState(false);
     const [inventory_id, setInventory_id] = useState("");
     const [inventory_name, setInventory_name] = useState("");
+    const navigate = useNavigate();
   
     useEffect(() => {
       const fetchInventory = async () => {

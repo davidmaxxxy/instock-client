@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixin.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 
-.table-wrapper{
+.inventory-table-wrapper{
 &__mobile{
     @include tablet{
         display: none;
@@ -16,7 +16,7 @@
     width: 100%;
 }
 }
-.table-header{
+.inventory-table-header{
     display: none;
     @include tablet{
         display: flex;
@@ -37,8 +37,8 @@
             text-align: center;
             width: 10%;
         }
-        &__cell-address{
-            width: 30%;
+        &__cell-qty{
+            width: 10%;
         }
         &__element{
             display: flex;

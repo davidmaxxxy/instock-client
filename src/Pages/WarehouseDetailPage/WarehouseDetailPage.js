@@ -35,11 +35,15 @@ const WarehouseDetailPage = () => {
     getWarehouseDetailByWarehouseId();
   }, [warehouseName, warehouseId]);
 
+  const handleClick = (path) => {
+    navigate(-1);
+  };
   return (
     <PageWrapper
       title={warehouseName}
       handleButtonClick={handleEditWarehouseNavigation}
       location={"Warehouse-details"}
+      handleBackNavigation={handleClick}
     >
       {!loading ? (
         <>

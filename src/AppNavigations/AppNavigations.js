@@ -44,3 +44,5 @@ const AppNavigations = () => {
     </Routes>
   );
 };
+
+export default AppNavigations;
