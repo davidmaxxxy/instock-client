@@ -4,7 +4,7 @@ import DisplayComponents from "../Components/DisplayComponents/DisplayComponents
 import EditWarehouse from "../Components/EditWarehouse/EditWarehouse";
 import WarehouseDetailPage from "../Pages/WarehouseDetailPage/WarehouseDetailPage";
 import InventoryDetailPage from "../Pages/InventoryDetailPage/InventoryDetailPage";
-import EditInventoryItem from "../Pages/EditInventoryItem/EditInventoryItem"; // Import the EditInventoryItem component
+import EditInventoryItem from "../Components/EditInventoryItem/EditInventoryItem";
 
 const AppNavigations = () => {
   return (
