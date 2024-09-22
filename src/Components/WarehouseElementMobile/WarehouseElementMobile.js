@@ -5,7 +5,7 @@ import btnDelete from '../../assets/Icons/delete_outline-24px.svg';
 import btnEdit from '../../assets/Icons/edit-24px.svg';
 import chevron from '../../assets/Icons/chevron_right-24px.svg'
 
-const WarehousesElementMobile = ({ warehouse }) => {
+const WarehousesElementMobile = ({ warehouse,handleOnClick }) => {
     return (
         <div className="mobile-element">
             <span className="mobile-element__container">
@@ -36,12 +36,12 @@ const WarehousesElementMobile = ({ warehouse }) => {
                 </span>
             </div>
             </span>
-            <nav className="mobile-element__buttons-container">
-                <img className="mobile-element__btn" src={btnDelete} alt="Delete"/>
+            <div className="mobile-element__buttons-container">
+                <img className="mobile-element__btn" onclick={()=>{handleOnClick(warehouse.id, warehouse.warehouse_name)}} src={btnDelete} alt="Delete"/>
                 <Link to={`/warehouse/${warehouse.id}/edit`}>
                 <img className="mobile-element__btn" src={btnEdit} alt="Edit"/>
                 </Link>
-            </nav>
+            </div>
         </div>
     );
   };

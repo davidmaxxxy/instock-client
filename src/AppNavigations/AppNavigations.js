@@ -4,8 +4,13 @@ import DisplayComponents from "../Components/DisplayComponents/DisplayComponents
 import EditWarehouse from "../Components/EditWarehouse/EditWarehouse";
 import WarehouseDetailPage from "../Pages/WarehouseDetailPage/WarehouseDetailPage";
 import InventoryDetailPage from "../Pages/InventoryDetailPage/InventoryDetailPage";
+
 import WarehouseListPage from "../Pages/WarehouseListPage/WarehouseListPage";
 import AddNewInventory from "../Pages/AddNewInventory/AddNewInventory";
+
+import InventoryListPage from "../Pages/InventoryListPage/InventoryListPage";
+import WarehouseList from "../Pages/WarehouseListPage/WarehouseListPage";
+
 
 const AppNavigations = () => {
   return (
@@ -22,8 +27,17 @@ const AppNavigations = () => {
       />
       <Route path="/" element={<WarehouseListPage />} />
       <Route path="/add/inventory/:warehouseId" element={<AddNewInventory />} />
-
+      <Route
+        path="/inventory/detail/:inventoryName/:inventoryId"
+        element={<InventoryDetailPage />}
+      />
+      <Route
+        path="/inventory"
+        element={<InventoryListPage />}
+      />
       <Route path="/warehouse/:id/edit" element={<EditWarehouse />} />
+      <Route path="/warehouse"
+        element={<WarehouseList />}/>
     </Routes>
   );
 };
