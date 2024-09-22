@@ -6,14 +6,14 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [activeButton, setActiveButton] = useState('');
+  const [activeButton, setActiveButton] = useState("");
 
   useEffect(() => {
-    const firstPathItem = location.pathname.split('/')[1];
-    if (firstPathItem === 'warehouse') {
-      setActiveButton('warehouse');
-    } else if (firstPathItem === 'inventory') {
-      setActiveButton('inventory');
+    const firstPathItem = location.pathname.split("/")[1];
+    if (firstPathItem === "warehouse" || firstPathItem === "") {
+      setActiveButton("warehouse");
+    } else if (firstPathItem === "inventory") {
+      setActiveButton("inventory");
     }
   }, [location]);
 
@@ -27,14 +27,18 @@ const Header = () => {
         <img className="header-logo__img" src={logoMobile} alt="logo" />
         <div className="header-side-nav">
           <button
-            className={`header-side-nav__btn ${activeButton === 'warehouse' ? 'active' : ''}`}
-            onClick={() => handleNavigation('/warehouse')}
+            className={`header-side-nav__btn ${
+              activeButton === "warehouse" ? "active" : ""
+            }`}
+            onClick={() => handleNavigation("/warehouse")}
           >
             Warehouses
           </button>
           <button
-            className={`header-side-nav__btn ${activeButton === 'inventory' ? 'active' : ''}`}
-            onClick={() => handleNavigation('/inventory')}
+            className={`header-side-nav__btn ${
+              activeButton === "inventory" ? "active" : ""
+            }`}
+            onClick={() => handleNavigation("/inventory")}
           >
             Inventory
           </button>

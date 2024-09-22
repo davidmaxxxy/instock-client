@@ -10,6 +10,7 @@ const WarehouseDetailPage = () => {
   const navigate = useNavigate();
   const [warehouse, setWarehouse] = useState({});
   const [loading, setLoading] = useState(false);
+
   const handleEditWarehouseNavigation = () => {
     // Navigate to the warehouse Edit page with the warehouse ID
     navigate(`/warehouse/${warehouseId}/edit`);
