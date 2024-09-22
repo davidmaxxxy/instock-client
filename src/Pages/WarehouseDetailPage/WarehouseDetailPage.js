@@ -9,6 +9,7 @@ const WarehouseDetailPage = () => {
   const navigate = useNavigate();
   const [warehouse, setWarehouse] = useState({});
   const [loading, setLoading] = useState(false);
+
   const handleEditWarehouseNavigation = () => {
     // Navigate to the warehouse Edit page with the warehouse ID
     navigate(`/warehouse/${warehouseId}/edit`);
@@ -20,7 +21,7 @@ const WarehouseDetailPage = () => {
       setLoading(true);
       try {
         const { status, data } = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}/warehouses/${warehouseId}`
+          `${process.env.REACT_APP_BACKEND_URL}warehouses/${warehouseId}`
         );
         if (status === 200) setWarehouse(data);
         setLoading(false);

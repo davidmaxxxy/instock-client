@@ -13,6 +13,7 @@ const PageWrapper = ({
   location,
   handleButtonClick,
   handleInputValue,
+  handleBackNavigation
 }) => {
   const navigate = useNavigate();
   const [error] = useState(false);
@@ -39,9 +40,7 @@ const PageWrapper = ({
               <img
                 src={backIcon}
                 alt="back arrow"
-                onClick={() => {
-                  navigate(-1);
-                }}
+                onClick={handleBackNavigation}
               />
             )}
             <h1 className="wrapper__container__header__title">{title}</h1>

@@ -3,6 +3,7 @@ import Homepage from "../Pages/HomePage/Homepage";
 import DisplayComponents from "../Components/DisplayComponents/DisplayComponents";
 import WarehouseDetailPage from "../Pages/WarehouseDetailPage/WarehouseDetailPage";
 import InventoryDetailPage from "../Pages/InventoryDetailPage/InventoryDetailPage";
+import AddNewInventory from "../Pages/AddNewInventory/AddNewInventory";
 
 const AppNavigations = () => {
   return (
@@ -18,6 +19,7 @@ const AppNavigations = () => {
         path="/inventory/detail/:inventoryName/:inventoryId"
         element={<InventoryDetailPage />}
       />
+      <Route path="/inventory/add" element={<AddNewInventory />} />
 
       {/* All Routes goes here  */}
     </Routes>
