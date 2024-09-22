@@ -1,0 +1,23 @@
+@media screen and (min-width: 768px) {
+  .delete {
+    background-color: #bdc5d5;
+  }
+}
+.delete__container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .delete__container {
+    justify-content: center;
+    width: 80%;
+    height: 30%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .delete__container {
+    width: 40%;
+    height: 20%;
+  }
+}/*# sourceMappingURL=DeleteComponentsInventory.css.map */

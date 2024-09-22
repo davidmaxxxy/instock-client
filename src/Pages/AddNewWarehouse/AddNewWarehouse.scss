@@ -1,0 +1,40 @@
+@use "../../styles/partials/mixin.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.newWarehouse__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  @include tablet {
+    flex-direction: row;
+  }
+  &__form-container {
+    padding: 1rem 0;
+    width: 100%;
+  }
+  &__form--input {
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 90%;
+  }
+}
+
+.newWarehouse__Item-Details__container {
+  width: 100%;
+}
+
+.newWarehouse__status--container {
+  display: flex;
+  align-items: center;
+}
+
+
+.newWarehouse__btn--container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include tablet {
+    justify-content: flex-end;
+  }
+
+}

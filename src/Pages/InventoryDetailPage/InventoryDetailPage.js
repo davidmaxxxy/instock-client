@@ -30,7 +30,7 @@ const InventoryDetailPage = () => {
       setLoading(true);
       try {
         const { status, data } = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}inventories/${inventoryId}`
+          `${process.env.REACT_APP_BACKEND_URL}/inventories/${inventoryId}`
         );
         if (status === 200) setInventory(data);
         setLoading(false);
@@ -41,11 +41,16 @@ const InventoryDetailPage = () => {
     getInventoryDetailByInventoryId();
   }, [inventoryName, inventoryId]);
 
+  const handleClick = (path) => {
+    navigate(-1);
+  };
+
   return (
     <PageWrapper
       title={inventoryName || inventory.item_name}
       handleButtonClick={handleEditInventoryNavigation}
       location={"Inventory-details"}
+      handleBackNavigation={handleClick}
     >
       {!loading ? (
         <section className="inventory-details__container">

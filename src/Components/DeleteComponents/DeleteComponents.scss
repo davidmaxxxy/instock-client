@@ -1,0 +1,27 @@
+
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixin.scss" as *;
+
+
+.delete {
+  @include tablet {
+    background-color: $secondary-color-cloud;
+  }
+
+  &__container {
+    background-color: $primary-color-white;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      justify-content: center;
+      width: 80%;
+      height: 30%;
+    }
+
+    @include desktop {
+      width: 40%;
+      height: 20%;
+    }
+  }
+}
