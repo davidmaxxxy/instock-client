@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Homepage from "../Pages/HomePage/Homepage";
 import DisplayComponents from "../Components/DisplayComponents/DisplayComponents";
 import EditWarehouse from "../Components/EditWarehouse/EditWarehouse";
 import WarehouseDetailPage from "../Pages/WarehouseDetailPage/WarehouseDetailPage";
@@ -11,7 +10,10 @@ import AddNewInventory from "../Pages/AddNewInventory/AddNewInventory";
 import InventoryListPage from "../Pages/InventoryListPage/InventoryListPage";
 import WarehouseList from "../Pages/WarehouseListPage/WarehouseListPage";
 
+
 import AddNewWarehouse from "../Pages/AddNewWarehouse/AddNewWarehouse";
+import EditInventory from "../Pages/EditInventory/EditInventory";
+
 
 
 const AppNavigations = () => {
@@ -29,6 +31,7 @@ const AppNavigations = () => {
       />
       <Route path="/" element={<WarehouseListPage />} />
       <Route path="/add/inventory/:warehouseId" element={<AddNewInventory />} />
+      <Route path="/edit/inventory/:warehouseId" element={<EditInventory />} />
       <Route
         path="/inventory/detail/:inventoryName/:inventoryId"
         element={<InventoryDetailPage />}

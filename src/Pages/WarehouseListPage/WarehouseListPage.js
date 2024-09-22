@@ -7,6 +7,7 @@ import WarehousesElement from "../../Components/WarehouseElement/WarehouseElemen
 import { useEffect, useState } from "react";
 import btnSort from "../../assets/Icons/sort-24px.svg";
 import DeleteComponents from "../../Components/DeleteComponents/DeleteComponents";
+import { useNavigate } from "react-router-dom";
 
 const WarehouseList = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -14,7 +15,8 @@ const WarehouseList = () => {
   const [loading, setLoading] = useState(false);
   const [warehouse_id, setWarehouse_id] = useState("");
   const [warehouse_name, setWarehouse_name] = useState("");
- 
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchWarehouses = async () => {

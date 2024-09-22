@@ -30,7 +30,7 @@ const Header = () => {
             className={`header-side-nav__btn ${
               activeButton === "warehouse" ? "active" : ""
             }`}
-            onClick={() => handleNavigation("/warehouse")}
+            onClick={() => handleNavigation("/")}
           >
             Warehouses
           </button>
