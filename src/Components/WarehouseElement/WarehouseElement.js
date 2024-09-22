@@ -5,7 +5,7 @@ import btnDelete from '../../assets/Icons/delete_outline-24px.svg';
 import btnEdit from '../../assets/Icons/edit-24px.svg';
 import chevron from '../../assets/Icons/chevron_right-24px.svg'
 
-const WarehousesElement = ({ warehouse }) => {
+const WarehousesElement = ({ warehouse,handleOnClick }) => {
   console.log(warehouse)
     return (
       
@@ -28,7 +28,8 @@ const WarehousesElement = ({ warehouse }) => {
           <td className="table-element-container__row">{warehouse.contact_email}</td>
         </tr>
         <tr className="table-element-container__cell table-element-container__cell-btn">
-            <td><img className="table-element-container__btn-delete table-element-container__btn" src={btnDelete} alt="Delete"/></td>
+          {/* Delete function link goes here */}
+            <td><img className="table-element-container__btn-delete table-element-container__btn" onclick={()=>{handleOnClick(warehouse.id, warehouse.warehouse_name)}} src={btnDelete} alt="Delete"/></td>
             <td>
               <Link to={`/warehouse/${warehouse.id}/edit`}>
             <img className="table-element-container__btn" src={btnEdit} alt="Edit"/>
