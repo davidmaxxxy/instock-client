@@ -15,7 +15,7 @@ const InventoryTable = () => {
       setLoading(true);
       try {
         const { status, data } = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}/inventory`
+          `${process.env.REACT_APP_BACKEND_URL}/inventories`
         );
         if (status === 200) {
           setInventory(data);
