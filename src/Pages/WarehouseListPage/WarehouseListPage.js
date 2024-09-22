@@ -14,6 +14,7 @@ const WarehouseList = () => {
   const [loading, setLoading] = useState(false);
   const [warehouse_id, setWarehouse_id] = useState("");
   const [warehouse_name, setWarehouse_name] = useState("");
+ 
 
   useEffect(() => {
     const fetchWarehouses = async () => {
